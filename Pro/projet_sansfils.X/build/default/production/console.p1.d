@@ -3,6 +3,6 @@
  console.c  \
 console.h  \
 config_24j40.h  \
+miwi_config_pro.h  \
 miwi_config.h  \
-miwi_config_mesh.h  \
 system_config.h 

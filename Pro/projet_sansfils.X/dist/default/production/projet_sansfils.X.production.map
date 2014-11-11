@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.33\dat\en_msgs.txt -cs \
   -h+dist/default/production\projet_sansfils.X.production.sym \
   --cmf=dist/default/production\projet_sansfils.X.production.cmf -z \
-  -Q18F46J50 -oC:\Users\fdaigle\AppData\Local\Temp\s1q4.6 \
+  -Q18F46J50 -oC:\Users\e1223214\AppData\Local\Temp\s7cs.6 \
   -Mdist/default/production/projet_sansfils.X.production.map -E1 -ver=XC8 \
   -ASTACK=0A00h-0ebfh -pstack=STACK -ACODE=00h-0FFF7h -ACONST=00h-0FFF7h \
   -ASMALLCONST=0F00h-0FFFhx240,0FF00h-0FFF7h -AMEDIUMCONST=0F00h-0FFF7h \
@@ -25,7 +25,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE \
-  C:\Users\fdaigle\AppData\Local\Temp\s1q4.obj \
+  C:\Users\e1223214\AppData\Local\Temp\s7cs.obj \
   dist/default/production\projet_sansfils.X.production.obj 
 
 Object code version is 3.11
@@ -38,13 +38,13 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\fdaigle\AppData\Local\Temp\s1q4.obj
+C:\Users\e1223214\AppData\Local\Temp\s7cs.obj
                 end_init                            204      204        4        4       0
                 reset_vec                             0        0        4        0       0
                 config                             FFF8     FFF8        8     FFF8       0
 dist/default/production\projet_sansfils.X.production.obj
                 intcode                               8        8      1FC        4       0
-                mediumconst                        FBA6     FBA6      452     7DD3       0
+                mediumconst                        FBAE     FBAE      44A     7DD7       0
                 text99                             DA08     DA08        2        4       0
                 text98                             D952     D952       1A        4       0
                 text97                             D9E8     D9E8        A        4       0
@@ -276,7 +276,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   SMALLCONST     
 
         CLASS   MEDIUMCONST    
-                mediumconst                        FBA6     FBA6      452         0
+                mediumconst                        FBAE     FBAE      44A         0
 
         CLASS   COMRAM         
                 cstackCOMRAM                          1        1       20         1
@@ -352,7 +352,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 bssBANK4                       000400  0000A0  0004A0       400       1  BANK4   
                 bssBANK5                       000500  000086  000586       500       1  BANK5   
                 bssBANK6                       000600  000080  000680       600       1  BANK6   
-                mediumconst                    00FBA6  000452  00FFF8      7DD3       0  MEDIUMCO
+                mediumconst                    00FBAE  00044A  00FFF8      7DD7       0  MEDIUMCO
                 config                         00FFF8  000008  010000      FFF8       0  CONFIG  
 
 
@@ -383,11 +383,11 @@ UNUSED ADDRESS RANGES
                          00586-005FF              7A
                          00680-00EBF             840
         CODE             00004-00007               4
-                         0DA0A-0FBA5            219C
+                         0DA0A-0FBAD            21A4
         COMRAM           00041-0005F              1F
         CONST            00004-00007               4
-                         0DA0A-0FBA5            219C
-        MEDIUMCONST      0DA0A-0FBA5            219C
+                         0DA0A-0FBAD            21A4
+        MEDIUMCONST      0DA0A-0FBAD            21A4
         RAM              000FE-000FF               2
                          001EE-001FF              12
                          002F5-002FF               B
@@ -396,7 +396,7 @@ UNUSED ADDRESS RANGES
                          00586-005FF              7A
                          00680-00EBF             100
         SFR              00EC0-00FFF              60
-        SMALLCONST       0DA0A-0FBA5             100
+        SMALLCONST       0DA0A-0FBAD             100
         STACK            00A00-00EBF             4C0
 
                                   Symbol Table
@@ -505,9 +505,9 @@ MiApp_UnicastAddress@SecEn                  cstackBANK0   000EC
 MiApp_UnicastAddress@handle                 cstackBANK1   001C8
 MiApp_UnicastAddress@i                      cstackBANK1   001C7
 MiApp_UnicastAddress@t1                     cstackBANK1   001B6
-MiApp_UnicastAddress@t1_4426                cstackBANK1   001BE
+MiApp_UnicastAddress@t1_4423                cstackBANK1   001BE
 MiApp_UnicastAddress@t2                     cstackBANK1   001BA
-MiApp_UnicastAddress@t2_4437                cstackBANK1   001C2
+MiApp_UnicastAddress@t2_4434                cstackBANK1   001C2
 MiApp_UnicastConnection@ConnectionIndex     cstackBANK0   000FB
 MiApp_UnicastConnection@MiWiPROFrameControl cstackBANK0   000FA
 MiApp_UnicastConnection@SecEn               cstackBANK0   000E9
@@ -793,7 +793,7 @@ _SSTGetID                                   text17        0D84E
 _SST_Val                                    bssBANK1      001B5
 _SYSTEM_Initialize                          text18        0CBC0
 _SaveIndirectMessage                        text61        0A502
-_ScanTime                                   mediumconst   0FBA7
+_ScanTime                                   mediumconst   0FBAF
 _SearchForLongAddress                       text87        0C64C
 _SearchForShortAddress                      text86        0CD04
 _SelfTest                                   text16        09BDC
@@ -1059,7 +1059,7 @@ __Lintret                                   intret        00000
 __Lintsave_regs                             intsave_regs  00000
 __Lirdata                                   irdata        00000
 __Ljflash_buffer                            jflash_buffer 0F800
-__Lmediumconst                              mediumconst   0FBA6
+__Lmediumconst                              mediumconst   0FBAE
 __LnvFARRAM                                 nvFARRAM      00000
 __Lnvbit                                    nvbit         00000
 __Lnvrram                                   nvrram        00000
@@ -1322,7 +1322,7 @@ __end_of_SPIPut2                            text91        0D952
 __end_of_SSTGetID                           text17        0D87A
 __end_of_SYSTEM_Initialize                  text18        0CC6E
 __end_of_SaveIndirectMessage                text61        0A7E4
-__end_of_ScanTime                           mediumconst   0FBE3
+__end_of_ScanTime                           mediumconst   0FBEB
 __end_of_SearchForLongAddress               text87        0C722
 __end_of_SearchForShortAddress              text86        0CD96
 __end_of_SelfTest                           text16        09F04
@@ -1349,16 +1349,16 @@ __end_of___lwmod                            text28        0D31A
 __end_of___lwtoft                           text4         0D84E
 __end_of___wmul                             text27        0D720
 __end_of__initialization                    cinit         0CCFA
-__end_of__stringdata                        mediumconst   0FFF6
-__end_of_dpowers                            mediumconst   0FBF9
+__end_of__stringdata                        mediumconst   0FFF7
+__end_of_dpowers                            mediumconst   0FC01
 __end_of_findNextNetworkEntry               text85        0D6B2
-__end_of_hexpowers                          mediumconst   0FC01
+__end_of_hexpowers                          mediumconst   0FC09
 __end_of_high_isr                           intcode       00204
 __end_of_isSameAddress                      text57        0D372
 __end_of_isdigit                            text26        0D8A6
 __end_of_main                               text0         0506E
 __end_of_memset                             text33        0D6EA
-__end_of_octpowers                          mediumconst   0FBEF
+__end_of_octpowers                          mediumconst   0FBF7
 __end_of_sprintf                            text25        05B44
 __end_ofi2_PHYGetLongRAMAddr                text96        0D4C6
 __end_ofi2_PHYGetShortRAMAddr               text95        0D8D0
@@ -1366,7 +1366,7 @@ __end_ofi2_PHYSetShortRAMAddr               text94        0D8F8
 __end_ofi2_SPIGet                           text97        0D9F2
 __end_ofi2_SPIPut                           text98        0D96C
 __initialization                            cinit         0CC6E
-__mediumconst                               mediumconst   0FBA6
+__mediumconst                               mediumconst   0FBAE
 __pbssBANK1                                 bssBANK1      00100
 __pbssBANK2                                 bssBANK2      00200
 __pbssBANK3                                 bssBANK3      00300
@@ -1384,7 +1384,7 @@ __pdataCOMRAM                               dataCOMRAM    0003F
 __pidataBANK1                               idataBANK1    0D9CA
 __pidataCOMRAM                              idataCOMRAM   0DA06
 __pintcode                                  intcode       00008
-__pmediumconst                              mediumconst   0FBA6
+__pmediumconst                              mediumconst   0FBAE
 __ptext0                                    text0         03F96
 __ptext1                                    text1         072A6
 __ptext10                                   text10        0BCA8
@@ -1586,20 +1586,20 @@ __size_ofi2_PHYSetShortRAMAddr              (abs)         00000
 __size_ofi2_SPIGet                          (abs)         00000
 __size_ofi2_SPIPut                          (abs)         00000
 __smallconst                                smallconst    00000
-__stringdata                                mediumconst   0FC01
+__stringdata                                mediumconst   0FC09
 _backgroundTaskTick                         bssBANK1      00112
 _currentChannel                             bssCOMRAM     0003C
 _defaultHops                                dataCOMRAM    00040
-_dpowers                                    mediumconst   0FBEF
+_dpowers                                    mediumconst   0FBF7
 _failureCounter                             bssBANK1      00121
 _findNextNetworkEntry                       text85        0D672
-_hexpowers                                  mediumconst   0FBF9
+_hexpowers                                  mediumconst   0FC01
 _high_isr                                   intcode       00008
 _indirectMessages                           bssBANK5      00500
 _init_case                                  bssBANK1      00130
 _isSameAddress                              text57        0D31A
 _isdigit                                    text26        0D87A
-_isdigit$4891                               cstackBANK0   00061
+_isdigit$4888                               cstackBANK0   00061
 _main                                       text0         03F96
 _memset                                     text33        0D6B2
 _myChannel                                  dataBANK1     001ED
@@ -1620,14 +1620,14 @@ _nvmNeighborRoutingTable                    bssBANK1      001AB
 _nvmOutFrameCounter                         bssBANK1      001AD
 _nvmRole                                    bssBANK1      001AF
 _nvmRoutingTable                            bssBANK1      001B1
-_octpowers                                  mediumconst   0FBE3
+_octpowers                                  mediumconst   0FBEB
 _openSocketInfo                             bssBANK1      00167
 _role                                       bssCOMRAM     0003E
 _rxMessage                                  bssBANK1      00100
 _sprintf                                    text25        0506E
-_sprintf$4615                               cstackBANK0   0007B
-_sprintf$4616                               cstackBANK0   0007D
-_sprintf$4622                               cstackBANK0   0007F
+_sprintf$4612                               cstackBANK0   0007B
+_sprintf$4613                               cstackBANK0   0007D
+_sprintf$4619                               cstackBANK0   0007F
 _switch0PressTime                           bssBANK1      00116
 _switch1PressTime                           bssBANK1      0011A
 _switch_val                                 bssBANK1      00131
@@ -2643,7 +2643,7 @@ Total ram usage:        5 bytes
 		 -> STR_15(21), STR_14(33), STR_13(31), STR_12(18), 
 		 -> STR_11(23), STR_10(29), STR_9(17), STR_8(33), 
 		 -> STR_7(30), STR_6(16), STR_5(18), STR_4(16), 
-		 -> STR_3(18), STR_2(17), STR_1(17), 
+		 -> STR_3(18), STR_2(10), STR_1(17), 
  Auto vars:     Size  Location     Type
   idx             1   26[BANK0 ] unsigned char 
   _val            4   38[BANK0 ] struct .
@@ -5506,19 +5506,19 @@ range_demo.c
 range_demo.c estimated size: 1412
 
 shared
-		__stringdata   		MEDIUMCONST    	FC01	0000	1013
-		_dpowers       		MEDIUMCONST    	FBEF	0000	10
-		_ScanTime      		MEDIUMCONST    	FBA7	0000	60
+		__stringdata   		MEDIUMCONST    	FC09	0000	1006
+		_dpowers       		MEDIUMCONST    	FBF7	0000	10
+		_ScanTime      		MEDIUMCONST    	FBAF	0000	60
 		i2_PHYGetShortR		CODE           	D8A6	0000	42
 		i2_PHYGetLongRA		CODE           	D474	0000	82
 		i2_PHYSetShortR		CODE           	D8D0	0000	40
 		__initializatio		CODE           	CC6E	0000	140
-		_octpowers     		MEDIUMCONST    	FBE3	0000	12
+		_octpowers     		MEDIUMCONST    	FBEB	0000	12
 		i2_SPIGet      		CODE           	D9E8	0000	10
-		_hexpowers     		MEDIUMCONST    	FBF9	0000	8
+		_hexpowers     		MEDIUMCONST    	FC01	0000	8
 		i2_SPIPut      		CODE           	D952	0000	26
 
-shared estimated size: 1443
+shared estimated size: 1436
 
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\fttol.c
 		___fttol       		CODE           	B83E	0000	380

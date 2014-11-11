@@ -24,7 +24,7 @@
     #define _SYSTEM_CONFIG_H
  
 #include "miwi_config.h"        //Include miwi application layer configuration file
-#include "miwi_config_mesh.h"   //Include protocol layer configuration file
+#include "miwi_config_pro.h"   //Include protocol layer configuration file
 #include "config_24j40.h"       //Transceiver configuration file
  
    

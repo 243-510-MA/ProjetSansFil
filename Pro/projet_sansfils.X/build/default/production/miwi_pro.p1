@@ -15926,412 +15926,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 "3571
 [e :UE 1722 ]
 }
-"3591
-[v _DumpConnection `(v ~T0 @X0 1 ef1`uc ]
-"3592
+"3791
+[v _DumpNetworkTable `(v ~T0 @X0 1 ef ]
 {
-[; ;miwi_pro.c: 3591: void DumpConnection(uint8_t index)
-[; ;miwi_pro.c: 3592: {
-[e :U _DumpConnection ]
-"3591
-[v _index `uc ~T0 @X0 1 r1 ]
-"3592
+[; ;miwi_pro.c: 3791: void DumpNetworkTable(void){}
+[e :U _DumpNetworkTable ]
 [f ]
-"3593
-[v _i `uc ~T0 @X0 1 a ]
-[v _j `uc ~T0 @X0 1 a ]
-[; ;miwi_pro.c: 3593: uint8_t i, j;
-[; ;miwi_pro.c: 3595: if( index == 0xFF )
-"3595
-[e $ ! == -> _index `i -> 255 `i 1728  ]
-[; ;miwi_pro.c: 3596: {
-"3596
-{
-[; ;miwi_pro.c: 3597: ;
-[; ;miwi_pro.c: 3598: for(i = 0; i < 8; i++)
-"3598
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1729  ]
-[e $U 1730  ]
-"3599
-[e :U 1729 ]
-[; ;miwi_pro.c: 3599: {
-{
-[; ;miwi_pro.c: 3600: ;
-"3601
-}
-"3598
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1729  ]
-[e :U 1730 ]
-"3601
-}
-[; ;miwi_pro.c: 3601: }
-[; ;miwi_pro.c: 3602: ;
-[; ;miwi_pro.c: 3603: ;
-[; ;miwi_pro.c: 3604: ;
-[; ;miwi_pro.c: 3605: ;
-[; ;miwi_pro.c: 3606: ;
-[; ;miwi_pro.c: 3607: ;
-[; ;miwi_pro.c: 3608: ;
-[; ;miwi_pro.c: 3609: ;
-"3610
-}
-[e :U 1728 ]
-[; ;miwi_pro.c: 3610: }
-[; ;miwi_pro.c: 3613: ;
-[; ;miwi_pro.c: 3614: if( index == 0xFF )
-"3614
-[e $ ! == -> _index `i -> 255 `i 1732  ]
-[; ;miwi_pro.c: 3615: {
-"3615
-{
-[; ;miwi_pro.c: 3616: for(i=0;i<10;i++)
-"3616
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1733  ]
-[e $U 1734  ]
-"3617
-[e :U 1733 ]
-[; ;miwi_pro.c: 3617: {
-{
-[; ;miwi_pro.c: 3618: if(ConnectionTable[i].status.bits.isValid)
-"3618
-[e $ ! != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i 1736  ]
-[; ;miwi_pro.c: 3619: {
-"3619
-{
-[; ;miwi_pro.c: 3620: ;
-[; ;miwi_pro.c: 3621: ;
-[; ;miwi_pro.c: 3622: ;
-[; ;miwi_pro.c: 3623: ;
-[; ;miwi_pro.c: 3624: ;
-[; ;miwi_pro.c: 3625: ;
-[; ;miwi_pro.c: 3627: if(ConnectionTable[i].status.bits.RXOnWhenIdle == 1)
-"3627
-[e $ ! == -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 0 `i -> 1 `i 1737  ]
-[; ;miwi_pro.c: 3628: {
-"3628
-{
-[; ;miwi_pro.c: 3629: ;
-"3630
-}
-[; ;miwi_pro.c: 3630: }
-[e $U 1738  ]
-"3631
-[e :U 1737 ]
-[; ;miwi_pro.c: 3631: else
-[; ;miwi_pro.c: 3632: {
-"3632
-{
-[; ;miwi_pro.c: 3633: ;
-"3634
-}
-[e :U 1738 ]
-[; ;miwi_pro.c: 3634: }
-[; ;miwi_pro.c: 3635: ;
-[; ;miwi_pro.c: 3636: ;
-[; ;miwi_pro.c: 3638: if(ConnectionTable[i].status.bits.directConnection == 1)
-"3638
-[e $ ! == -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 1 `i -> 1 `i 1739  ]
-[; ;miwi_pro.c: 3639: {
-"3639
-{
-[; ;miwi_pro.c: 3640: ;
-"3641
-}
-[; ;miwi_pro.c: 3641: }
-[e $U 1740  ]
-"3642
-[e :U 1739 ]
-[; ;miwi_pro.c: 3642: else
-[; ;miwi_pro.c: 3643: {
-"3643
-{
-[; ;miwi_pro.c: 3644: ;
-"3645
-}
-[e :U 1740 ]
-[; ;miwi_pro.c: 3645: }
-[; ;miwi_pro.c: 3646: ;
-[; ;miwi_pro.c: 3647: ;
-[; ;miwi_pro.c: 3649: if(ConnectionTable[i].status.bits.shortAddressValid)
-"3649
-[e $ ! != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 3 `i -> -> -> 0 `i `uc `i 1741  ]
-[; ;miwi_pro.c: 3650: {
-"3650
-{
-[; ;miwi_pro.c: 3652: ;
-[; ;miwi_pro.c: 3653: ;
-[; ;miwi_pro.c: 3654: ;
-[; ;miwi_pro.c: 3655: ;
-[; ;miwi_pro.c: 3656: ;
-[; ;miwi_pro.c: 3657: ;
-[; ;miwi_pro.c: 3658: ;
-"3659
-}
-[; ;miwi_pro.c: 3659: }
-[e $U 1742  ]
-"3660
-[e :U 1741 ]
-[; ;miwi_pro.c: 3660: else
-[; ;miwi_pro.c: 3661: {
-"3661
-{
-[; ;miwi_pro.c: 3662: ;
-[; ;miwi_pro.c: 3663: ;
-[; ;miwi_pro.c: 3664: ;
-[; ;miwi_pro.c: 3665: ;
-[; ;miwi_pro.c: 3666: ;
-[; ;miwi_pro.c: 3667: ;
-[; ;miwi_pro.c: 3668: ;
-[; ;miwi_pro.c: 3669: ;
-[; ;miwi_pro.c: 3670: ;
-[; ;miwi_pro.c: 3671: ;
-[; ;miwi_pro.c: 3672: ;
-"3673
-}
-[e :U 1742 ]
-[; ;miwi_pro.c: 3673: }
-[; ;miwi_pro.c: 3675: if(ConnectionTable[i].status.bits.longAddressValid)
-"3675
-[e $ ! != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 2 `i -> -> -> 0 `i `uc `i 1743  ]
-[; ;miwi_pro.c: 3676: {
-"3676
-{
-[; ;miwi_pro.c: 3678: for(j = 0; j < 8; j++)
-"3678
-{
-[e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 8 `i 1744  ]
-[e $U 1745  ]
-"3679
-[e :U 1744 ]
-[; ;miwi_pro.c: 3679: {
-{
-[; ;miwi_pro.c: 3680: ;
-"3681
-}
-"3678
-[e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 8 `i 1744  ]
-[e :U 1745 ]
-"3681
-}
-"3682
-}
-[e :U 1743 ]
-[; ;miwi_pro.c: 3681: }
-[; ;miwi_pro.c: 3682: }
-[; ;miwi_pro.c: 3685: ;
-[; ;miwi_pro.c: 3692: for(j = 0; j < 1; j++)
-"3692
-{
-[e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 1 `i 1747  ]
-[e $U 1748  ]
-"3693
-[e :U 1747 ]
-[; ;miwi_pro.c: 3693: {
-{
-[; ;miwi_pro.c: 3694: ;
-"3695
-}
-"3692
-[e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 1 `i 1747  ]
-[e :U 1748 ]
-"3695
-}
-[; ;miwi_pro.c: 3695: }
-[; ;miwi_pro.c: 3698: ;
-[; ;miwi_pro.c: 3699: ;
-"3700
-}
-[e :U 1736 ]
-"3701
-}
-"3616
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1733  ]
-[e :U 1734 ]
-"3701
-}
-"3702
-}
-[; ;miwi_pro.c: 3700: }
-[; ;miwi_pro.c: 3701: }
-[; ;miwi_pro.c: 3702: }
-[e $U 1750  ]
-"3703
-[e :U 1732 ]
-[; ;miwi_pro.c: 3703: else
-[; ;miwi_pro.c: 3704: {
-"3704
-{
-[; ;miwi_pro.c: 3705: if(ConnectionTable[index].status.bits.isValid)
-"3705
-[e $ ! != -> . . . *U + &U _ConnectionTable * -> _index `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i 1751  ]
-[; ;miwi_pro.c: 3706: {
-"3706
-{
-[; ;miwi_pro.c: 3707: ;
-[; ;miwi_pro.c: 3708: ;
-[; ;miwi_pro.c: 3709: ;
-[; ;miwi_pro.c: 3710: ;
-[; ;miwi_pro.c: 3711: ;
-[; ;miwi_pro.c: 3712: ;
-[; ;miwi_pro.c: 3714: if(ConnectionTable[index].status.bits.RXOnWhenIdle == 1)
-"3714
-[e $ ! == -> . . . *U + &U _ConnectionTable * -> _index `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 0 `i -> 1 `i 1752  ]
-[; ;miwi_pro.c: 3715: {
-"3715
-{
-[; ;miwi_pro.c: 3716: ;
-"3717
-}
-[; ;miwi_pro.c: 3717: }
-[e $U 1753  ]
-"3718
-[e :U 1752 ]
-[; ;miwi_pro.c: 3718: else
-[; ;miwi_pro.c: 3719: {
-"3719
-{
-[; ;miwi_pro.c: 3720: ;
-"3721
-}
-[e :U 1753 ]
-[; ;miwi_pro.c: 3721: }
-[; ;miwi_pro.c: 3722: ;
-[; ;miwi_pro.c: 3723: ;
-[; ;miwi_pro.c: 3725: if(ConnectionTable[index].status.bits.directConnection == 1)
-"3725
-[e $ ! == -> . . . *U + &U _ConnectionTable * -> _index `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 1 `i -> 1 `i 1754  ]
-[; ;miwi_pro.c: 3726: {
-"3726
-{
-[; ;miwi_pro.c: 3727: ;
-"3728
-}
-[; ;miwi_pro.c: 3728: }
-[e $U 1755  ]
-"3729
-[e :U 1754 ]
-[; ;miwi_pro.c: 3729: else
-[; ;miwi_pro.c: 3730: {
-"3730
-{
-[; ;miwi_pro.c: 3731: ;
-"3732
-}
-[e :U 1755 ]
-[; ;miwi_pro.c: 3732: }
-[; ;miwi_pro.c: 3733: ;
-[; ;miwi_pro.c: 3734: ;
-[; ;miwi_pro.c: 3736: if(ConnectionTable[index].status.bits.shortAddressValid)
-"3736
-[e $ ! != -> . . . *U + &U _ConnectionTable * -> _index `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 3 `i -> -> -> 0 `i `uc `i 1756  ]
-[; ;miwi_pro.c: 3737: {
-"3737
-{
-[; ;miwi_pro.c: 3739: ;
-[; ;miwi_pro.c: 3740: ;
-[; ;miwi_pro.c: 3741: ;
-[; ;miwi_pro.c: 3742: ;
-[; ;miwi_pro.c: 3743: ;
-[; ;miwi_pro.c: 3744: ;
-[; ;miwi_pro.c: 3745: ;
-"3746
-}
-[; ;miwi_pro.c: 3746: }
-[e $U 1757  ]
-"3747
-[e :U 1756 ]
-[; ;miwi_pro.c: 3747: else
-[; ;miwi_pro.c: 3748: {
-"3748
-{
-[; ;miwi_pro.c: 3749: ;
-[; ;miwi_pro.c: 3750: ;
-[; ;miwi_pro.c: 3751: ;
-[; ;miwi_pro.c: 3752: ;
-[; ;miwi_pro.c: 3753: ;
-[; ;miwi_pro.c: 3754: ;
-[; ;miwi_pro.c: 3755: ;
-[; ;miwi_pro.c: 3756: ;
-[; ;miwi_pro.c: 3757: ;
-[; ;miwi_pro.c: 3758: ;
-[; ;miwi_pro.c: 3759: ;
-"3760
-}
-[e :U 1757 ]
-[; ;miwi_pro.c: 3760: }
-[; ;miwi_pro.c: 3762: if(ConnectionTable[index].status.bits.longAddressValid)
-"3762
-[e $ ! != -> . . . *U + &U _ConnectionTable * -> _index `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 2 `i -> -> -> 0 `i `uc `i 1758  ]
-[; ;miwi_pro.c: 3763: {
-"3763
-{
-[; ;miwi_pro.c: 3765: for(j = 0; j < 8; j++)
-"3765
-{
-[e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 8 `i 1759  ]
-[e $U 1760  ]
-"3766
-[e :U 1759 ]
-[; ;miwi_pro.c: 3766: {
-{
-[; ;miwi_pro.c: 3767: ;
-"3768
-}
-"3765
-[e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 8 `i 1759  ]
-[e :U 1760 ]
-"3768
-}
-"3769
-}
-[e :U 1758 ]
-[; ;miwi_pro.c: 3768: }
-[; ;miwi_pro.c: 3769: }
-[; ;miwi_pro.c: 3772: ;
-[; ;miwi_pro.c: 3779: for(j = 0; j < 1; j++)
-"3779
-{
-[e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 1 `i 1762  ]
-[e $U 1763  ]
-"3780
-[e :U 1762 ]
-[; ;miwi_pro.c: 3780: {
-{
-[; ;miwi_pro.c: 3781: ;
-"3782
-}
-"3779
-[e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 1 `i 1762  ]
-[e :U 1763 ]
-"3782
-}
-[; ;miwi_pro.c: 3782: }
-[; ;miwi_pro.c: 3785: ;
-[; ;miwi_pro.c: 3786: ;
-"3787
-}
-[e :U 1751 ]
-"3788
-}
-[e :U 1750 ]
-[; ;miwi_pro.c: 3787: }
-[; ;miwi_pro.c: 3788: }
-[; ;miwi_pro.c: 3789: }
-"3789
 [e :UE 1727 ]
 }
 "3920
@@ -16350,13 +15950,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . . _openSocketInfo 0 0 0 -> -> 0 `i `uc ]
 [; ;miwi_pro.c: 3929: if(role == 0x02)
 "3929
-[e $ ! == -> _role `i -> 2 `i 1766  ]
+[e $ ! == -> _role `i -> 2 `i 1729  ]
 [; ;miwi_pro.c: 3930: {
 "3930
 {
 [; ;miwi_pro.c: 3932: if(openSocketInfo.status.bits.requestIsOpen == 0)
 "3932
-[e $ ! == -> . . . _openSocketInfo 0 0 1 `i -> 0 `i 1767  ]
+[e $ ! == -> . . . _openSocketInfo 0 0 1 `i -> 0 `i 1730  ]
 [; ;miwi_pro.c: 3933: {
 "3933
 {
@@ -16370,10 +15970,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "3937
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1768  ]
-[e $U 1769  ]
+[e $ < -> _i `i -> 8 `i 1731  ]
+[e $U 1732  ]
 "3938
-[e :U 1768 ]
+[e :U 1731 ]
 [; ;miwi_pro.c: 3938: {
 {
 [; ;miwi_pro.c: 3939: openSocketInfo.LongAddress1[i] = myLongAddress[i];
@@ -16383,8 +15983,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "3937
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1768  ]
-[e :U 1769 ]
+[e $ < -> _i `i -> 8 `i 1731  ]
+[e :U 1732 ]
 "3940
 }
 [; ;miwi_pro.c: 3940: }
@@ -16398,10 +15998,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "3944
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 1 `i 1771  ]
-[e $U 1772  ]
+[e $ < -> _i `i -> 1 `i 1734  ]
+[e $U 1735  ]
 "3945
-[e :U 1771 ]
+[e :U 1734 ]
 [; ;miwi_pro.c: 3945: {
 {
 [; ;miwi_pro.c: 3946: openSocketInfo.AdditionalNodeID1[i] = AdditionalNodeID[i];
@@ -16411,37 +16011,37 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "3944
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 1 `i 1771  ]
-[e :U 1772 ]
+[e $ < -> _i `i -> 1 `i 1734  ]
+[e :U 1735 ]
 "3947
 }
 "3949
 }
 [; ;miwi_pro.c: 3947: }
 [; ;miwi_pro.c: 3949: }
-[e $U 1774  ]
+[e $U 1737  ]
 "3950
-[e :U 1767 ]
+[e :U 1730 ]
 [; ;miwi_pro.c: 3950: else
 [; ;miwi_pro.c: 3951: {
 "3951
 {
 [; ;miwi_pro.c: 3952: if(openSocketInfo.ShortAddress1.Val == 0x0000)
 "3952
-[e $ ! == . . _openSocketInfo 2 1 -> -> 0 `i `ui 1775  ]
+[e $ ! == . . _openSocketInfo 2 1 -> -> 0 `i `ui 1738  ]
 [; ;miwi_pro.c: 3953: {
 "3953
 {
 [; ;miwi_pro.c: 3955: return;
 "3955
-[e $UE 1765  ]
+[e $UE 1728  ]
 "3956
 }
-[e :U 1775 ]
+[e :U 1738 ]
 [; ;miwi_pro.c: 3956: }
 [; ;miwi_pro.c: 3958: if(openSocketInfo.ShortAddress1.Val != myShortAddress.Val)
 "3958
-[e $ ! != . . _openSocketInfo 2 1 . _myShortAddress 1 1776  ]
+[e $ ! != . . _openSocketInfo 2 1 . _myShortAddress 1 1739  ]
 [; ;miwi_pro.c: 3959: {
 "3959
 {
@@ -16460,10 +16060,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "3963
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1777  ]
-[e $U 1778  ]
+[e $ < -> _i `i -> 8 `i 1740  ]
+[e $U 1741  ]
 "3964
-[e :U 1777 ]
+[e :U 1740 ]
 [; ;miwi_pro.c: 3964: {
 {
 [; ;miwi_pro.c: 3965: TxBuffer[TxData++] = myLongAddress[i];
@@ -16473,8 +16073,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "3963
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1777  ]
-[e :U 1778 ]
+[e $ < -> _i `i -> 8 `i 1740  ]
+[e :U 1741 ]
 "3966
 }
 [; ;miwi_pro.c: 3966: }
@@ -16488,10 +16088,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "3970
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 1 `i 1780  ]
-[e $U 1781  ]
+[e $ < -> _i `i -> 1 `i 1743  ]
+[e $U 1744  ]
 "3971
-[e :U 1780 ]
+[e :U 1743 ]
 [; ;miwi_pro.c: 3971: {
 {
 [; ;miwi_pro.c: 3972: TxBuffer[TxData++] = AdditionalNodeID[i];
@@ -16501,8 +16101,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "3970
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 1 `i 1780  ]
-[e :U 1781 ]
+[e $ < -> _i `i -> 1 `i 1743  ]
+[e :U 1744 ]
 "3973
 }
 [; ;miwi_pro.c: 3973: }
@@ -16510,10 +16110,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "3976
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1783  ]
-[e $U 1784  ]
+[e $ < -> _i `i -> 8 `i 1746  ]
+[e $U 1747  ]
 "3977
-[e :U 1783 ]
+[e :U 1746 ]
 [; ;miwi_pro.c: 3977: {
 {
 [; ;miwi_pro.c: 3978: tempLongAddress[i] = openSocketInfo.LongAddress1[i];
@@ -16523,8 +16123,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "3976
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1783  ]
-[e :U 1784 ]
+[e $ < -> _i `i -> 8 `i 1746  ]
+[e :U 1747 ]
 "3979
 }
 [; ;miwi_pro.c: 3979: }
@@ -16536,7 +16136,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . _openSocketInfo 1 ( _SearchForShortAddress ..  ]
 [; ;miwi_pro.c: 3984: if(openSocketInfo.socketHandle != 0xFF)
 "3984
-[e $ ! != -> . _openSocketInfo 1 `i -> 255 `i 1786  ]
+[e $ ! != -> . _openSocketInfo 1 `i -> 255 `i 1749  ]
 [; ;miwi_pro.c: 3985: {
 "3985
 {
@@ -16546,9 +16146,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "3987
 }
 [; ;miwi_pro.c: 3987: }
-[e $U 1787  ]
+[e $U 1750  ]
 "3988
-[e :U 1786 ]
+[e :U 1749 ]
 [; ;miwi_pro.c: 3988: else
 [; ;miwi_pro.c: 3989: {
 "3989
@@ -16558,7 +16158,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . _tempNodeStatus 0 -> -> 140 `i `uc ]
 [; ;miwi_pro.c: 3993: if((tempShortAddress.v[0] & 0x80) == 0)
 "3993
-[e $ ! == & -> *U + &U . _tempShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _tempShortAddress 0 `ui `ux `i -> 128 `i -> 0 `i 1788  ]
+[e $ ! == & -> *U + &U . _tempShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _tempShortAddress 0 `ui `ux `i -> 128 `i -> 0 `i 1751  ]
 [; ;miwi_pro.c: 3994: {
 "3994
 {
@@ -16567,10 +16167,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _tempNodeStatus 1 0 -> -> 1 `i `uc ]
 "3996
 }
-[e :U 1788 ]
+[e :U 1751 ]
 "3997
 }
-[e :U 1787 ]
+[e :U 1750 ]
 [; ;miwi_pro.c: 3996: }
 [; ;miwi_pro.c: 3997: }
 [; ;miwi_pro.c: 3998: tempPANID.Val = myPANID.Val;
@@ -16581,7 +16181,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . _openSocketInfo 1 ( _AddNodeToNetworkTable ..  ]
 [; ;miwi_pro.c: 4002: if( openSocketInfo.socketHandle < 0xFF )
 "4002
-[e $ ! < -> . _openSocketInfo 1 `i -> 255 `i 1789  ]
+[e $ ! < -> . _openSocketInfo 1 `i -> 255 `i 1752  ]
 [; ;miwi_pro.c: 4003: {
 "4003
 {
@@ -16589,10 +16189,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4005
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 1 `i 1790  ]
-[e $U 1791  ]
+[e $ < -> _i `i -> 1 `i 1753  ]
+[e $U 1754  ]
 "4006
-[e :U 1790 ]
+[e :U 1753 ]
 [; ;miwi_pro.c: 4006: {
 {
 [; ;miwi_pro.c: 4007: ConnectionTable[openSocketInfo.socketHandle].PeerInfo[i] = openSocketInfo.AdditionalNodeID1[i];
@@ -16602,13 +16202,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "4005
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 1 `i 1790  ]
-[e :U 1791 ]
+[e $ < -> _i `i -> 1 `i 1753  ]
+[e :U 1754 ]
 "4008
 }
 "4010
 }
-[e :U 1789 ]
+[e :U 1752 ]
 [; ;miwi_pro.c: 4008: }
 [; ;miwi_pro.c: 4010: }
 [; ;miwi_pro.c: 4013: MiApp_UnicastAddress(openSocketInfo.ShortAddress1.v, 0, 0);
@@ -16622,7 +16222,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . . _openSocketInfo 0 0 0 -> -> 1 `i `uc ]
 [; ;miwi_pro.c: 4017: if( openSocketInfo.socketHandle < 0xFF )
 "4017
-[e $ ! < -> . _openSocketInfo 1 `i -> 255 `i 1793  ]
+[e $ ! < -> . _openSocketInfo 1 `i -> 255 `i 1756  ]
 [; ;miwi_pro.c: 4018: {
 "4018
 {
@@ -16631,25 +16231,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _NVMWrite (3 , , -> &U *U + &U _ConnectionTable * -> . _openSocketInfo 1 `ux -> -> # *U &U _ConnectionTable `ui `ux `*uc + _nvmConnectionTable * -> . _openSocketInfo 1 `ui -> # `S1164 `ui -> # `S1164 `ui ]
 "4022
 }
-[e :U 1793 ]
+[e :U 1756 ]
 "4024
 }
-[e :U 1776 ]
+[e :U 1739 ]
 "4025
 }
-[e :U 1774 ]
+[e :U 1737 ]
 [; ;miwi_pro.c: 4022: }
 [; ;miwi_pro.c: 4024: }
 [; ;miwi_pro.c: 4025: }
 [; ;miwi_pro.c: 4026: return;
 "4026
-[e $UE 1765  ]
+[e $UE 1728  ]
 "4027
 }
 [; ;miwi_pro.c: 4027: }
-[e $U 1794  ]
+[e $U 1757  ]
 "4028
-[e :U 1766 ]
+[e :U 1729 ]
 [; ;miwi_pro.c: 4028: else
 [; ;miwi_pro.c: 4029: {
 "4029
@@ -16659,7 +16259,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . _openSocketInfo 7 ( _MiWi_TickGet ..  ]
 "4033
 }
-[e :U 1794 ]
+[e :U 1757 ]
 [; ;miwi_pro.c: 4033: }
 [; ;miwi_pro.c: 4039: tempShortAddress.Val = 0x0000;
 "4039
@@ -16679,10 +16279,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4044
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1795  ]
-[e $U 1796  ]
+[e $ < -> _i `i -> 8 `i 1758  ]
+[e $U 1759  ]
 "4045
-[e :U 1795 ]
+[e :U 1758 ]
 [; ;miwi_pro.c: 4045: {
 {
 [; ;miwi_pro.c: 4046: TxBuffer[TxData++] = myLongAddress[i];
@@ -16692,8 +16292,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "4044
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1795  ]
-[e :U 1796 ]
+[e $ < -> _i `i -> 8 `i 1758  ]
+[e :U 1759 ]
 "4047
 }
 [; ;miwi_pro.c: 4047: }
@@ -16701,10 +16301,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4049
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 1 `i 1798  ]
-[e $U 1799  ]
+[e $ < -> _i `i -> 1 `i 1761  ]
+[e $U 1762  ]
 "4050
-[e :U 1798 ]
+[e :U 1761 ]
 [; ;miwi_pro.c: 4050: {
 {
 [; ;miwi_pro.c: 4051: TxBuffer[TxData++] = AdditionalNodeID[i];
@@ -16714,8 +16314,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "4049
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 1 `i 1798  ]
-[e :U 1799 ]
+[e $ < -> _i `i -> 1 `i 1761  ]
+[e :U 1762 ]
 "4052
 }
 [; ;miwi_pro.c: 4052: }
@@ -16727,7 +16327,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . . _openSocketInfo 0 0 1 -> -> 1 `i `uc ]
 [; ;miwi_pro.c: 4060: }
 "4060
-[e :UE 1765 ]
+[e :UE 1728 ]
 }
 "4095
 [v _SaveIndirectMessage `(E8144 ~T0 @X0 1 ef5`E8144`S1136`*uc`E8144`E8144 ]
@@ -16762,15 +16362,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4110
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 2 `i 1802  ]
-[e $U 1803  ]
+[e $ < -> _i `i -> 2 `i 1765  ]
+[e $U 1766  ]
 "4111
-[e :U 1802 ]
+[e :U 1765 ]
 [; ;miwi_pro.c: 4111: {
 {
 [; ;miwi_pro.c: 4112: if( indirectMessages[i].flags.bits.isValid == 0)
 "4112
-[e $ ! == -> . . . *U + &U _indirectMessages * -> _i `ux -> -> # *U &U _indirectMessages `ui `ux 3 1 0 `i -> 0 `i 1805  ]
+[e $ ! == -> . . . *U + &U _indirectMessages * -> _i `ux -> -> # *U &U _indirectMessages `ui `ux 3 1 0 `i -> 0 `i 1768  ]
 [; ;miwi_pro.c: 4113: {
 "4113
 {
@@ -16791,13 +16391,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . . *U + &U _indirectMessages * -> _i `ux -> -> # *U &U _indirectMessages `ui `ux 3 1 4 -> _isAltAddress `uc ]
 [; ;miwi_pro.c: 4120: if( isAltAddress == 0 )
 "4120
-[e $ ! == -> _isAltAddress `i -> 0 `i 1806  ]
+[e $ ! == -> _isAltAddress `i -> 0 `i 1769  ]
 [; ;miwi_pro.c: 4121: {
 "4121
 {
 [; ;miwi_pro.c: 4122: if( Broadcast == 0 )
 "4122
-[e $ ! == -> _Broadcast `i -> 0 `i 1807  ]
+[e $ ! == -> _Broadcast `i -> 0 `i 1770  ]
 [; ;miwi_pro.c: 4123: {
 "4123
 {
@@ -16805,10 +16405,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4124
 {
 [e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 8 `i 1808  ]
-[e $U 1809  ]
+[e $ < -> _j `i -> 8 `i 1771  ]
+[e $U 1772  ]
 "4125
-[e :U 1808 ]
+[e :U 1771 ]
 [; ;miwi_pro.c: 4125: {
 {
 [; ;miwi_pro.c: 4126: indirectMessages[i].DestAddress[j] = DestinationAddress[j];
@@ -16818,28 +16418,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "4124
 [e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 8 `i 1808  ]
-[e :U 1809 ]
+[e $ < -> _j `i -> 8 `i 1771  ]
+[e :U 1772 ]
 "4127
 }
 "4128
 }
-[e :U 1807 ]
+[e :U 1770 ]
 "4129
 }
 [; ;miwi_pro.c: 4127: }
 [; ;miwi_pro.c: 4128: }
 [; ;miwi_pro.c: 4129: }
-[e $U 1811  ]
+[e $U 1774  ]
 "4130
-[e :U 1806 ]
+[e :U 1769 ]
 [; ;miwi_pro.c: 4130: else
 [; ;miwi_pro.c: 4131: {
 "4131
 {
 [; ;miwi_pro.c: 4132: if( Broadcast == 0 )
 "4132
-[e $ ! == -> _Broadcast `i -> 0 `i 1812  ]
+[e $ ! == -> _Broadcast `i -> 0 `i 1775  ]
 [; ;miwi_pro.c: 4133: {
 "4133
 {
@@ -16851,10 +16451,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U . *U + &U _indirectMessages * -> _i `ux -> -> # *U &U _indirectMessages `ui `ux 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U + &U _indirectMessages * -> _i `ux -> -> # *U &U _indirectMessages `ui `ux 2 `ui `ux *U + _DestinationAddress * -> -> 1 `i `x -> -> # *U _DestinationAddress `i `x ]
 "4136
 }
-[e :U 1812 ]
+[e :U 1775 ]
 "4137
 }
-[e :U 1811 ]
+[e :U 1774 ]
 [; ;miwi_pro.c: 4136: }
 [; ;miwi_pro.c: 4137: }
 [; ;miwi_pro.c: 4138: indirectMessages[i].DestPANID.Val = DestinationPANID.Val;
@@ -16867,9 +16467,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4177
 {
 [e = _j -> -> 0 `i `uc ]
-[e $U 1816  ]
+[e $U 1779  ]
 "4178
-[e :U 1813 ]
+[e :U 1776 ]
 [; ;miwi_pro.c: 4178: {
 {
 [; ;miwi_pro.c: 4179: indirectMessages[i].PayLoad[j] = TxBuffer[j];
@@ -16879,9 +16479,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "4177
 [e ++ _j -> -> 1 `i `uc ]
-[e :U 1816 ]
-[e $ < -> _j `i -> _TxData `i 1813  ]
-[e :U 1814 ]
+[e :U 1779 ]
+[e $ < -> _j `i -> _TxData `i 1776  ]
+[e :U 1777 ]
 "4180
 }
 [; ;miwi_pro.c: 4180: }
@@ -16891,16 +16491,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 4182: return 1;
 "4182
 [e ) -> -> 1 `i `E8144 ]
-[e $UE 1801  ]
+[e $UE 1764  ]
 "4183
 }
-[e :U 1805 ]
+[e :U 1768 ]
 "4184
 }
 "4110
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 2 `i 1802  ]
-[e :U 1803 ]
+[e $ < -> _i `i -> 2 `i 1765  ]
+[e :U 1766 ]
 "4184
 }
 [; ;miwi_pro.c: 4183: }
@@ -16908,10 +16508,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 4186: return 0;
 "4186
 [e ) -> -> 0 `i `E8144 ]
-[e $UE 1801  ]
+[e $UE 1764  ]
 [; ;miwi_pro.c: 4187: }
 "4187
-[e :UE 1801 ]
+[e :UE 1764 ]
 }
 "4212
 [v _SearchForShortAddress `(uc ~T0 @X0 1 ef ]
@@ -16928,40 +16528,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4216
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1818  ]
-[e $U 1819  ]
+[e $ < -> _i `i -> 10 `i 1781  ]
+[e $U 1782  ]
 "4217
-[e :U 1818 ]
+[e :U 1781 ]
 [; ;miwi_pro.c: 4217: {
 {
 [; ;miwi_pro.c: 4218: if(ConnectionTable[i].status.bits.isValid && ConnectionTable[i].status.bits.shortAddressValid)
 "4218
-[e $ ! && != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 3 `i -> -> -> 0 `i `uc `i 1821  ]
+[e $ ! && != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 3 `i -> -> -> 0 `i `uc `i 1784  ]
 [; ;miwi_pro.c: 4219: {
 "4219
 {
 [; ;miwi_pro.c: 4220: if(ConnectionTable[i].AltAddress.Val == tempShortAddress.Val)
 "4220
-[e $ ! == . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 1 . _tempShortAddress 1 1822  ]
+[e $ ! == . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 1 1 . _tempShortAddress 1 1785  ]
 [; ;miwi_pro.c: 4221: {
 "4221
 {
 [; ;miwi_pro.c: 4222: return i;
 "4222
 [e ) _i ]
-[e $UE 1817  ]
+[e $UE 1780  ]
 "4223
 }
-[e :U 1822 ]
+[e :U 1785 ]
 "4224
 }
-[e :U 1821 ]
+[e :U 1784 ]
 "4225
 }
 "4216
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1818  ]
-[e :U 1819 ]
+[e $ < -> _i `i -> 10 `i 1781  ]
+[e :U 1782 ]
 "4225
 }
 [; ;miwi_pro.c: 4223: }
@@ -16970,10 +16570,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 4226: return 0xFF;
 "4226
 [e ) -> -> 255 `i `uc ]
-[e $UE 1817  ]
+[e $UE 1780  ]
 [; ;miwi_pro.c: 4227: }
 "4227
-[e :UE 1817 ]
+[e :UE 1780 ]
 }
 "4243
 [v _SendBeacon `(v ~T0 @X0 1 ef ]
@@ -17013,10 +16613,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4261
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 1 `i 1824  ]
-[e $U 1825  ]
+[e $ < -> _i `i -> 1 `i 1787  ]
+[e $U 1788  ]
 "4262
-[e :U 1824 ]
+[e :U 1787 ]
 [; ;miwi_pro.c: 4262: {
 {
 [; ;miwi_pro.c: 4263: TxBuffer[TxData++] = AdditionalNodeID[i];
@@ -17026,8 +16626,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "4261
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 1 `i 1824  ]
-[e :U 1825 ]
+[e $ < -> _i `i -> 1 `i 1787  ]
+[e :U 1788 ]
 "4264
 }
 [; ;miwi_pro.c: 4264: }
@@ -17036,7 +16636,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _SendMACPacket (4 , , , &U . _myPANID 0 -> -> 0 `i `*uc -> -> 3 `i `uc -> -> 4 `i `uc ]
 [; ;miwi_pro.c: 4272: }
 "4272
-[e :UE 1823 ]
+[e :UE 1786 ]
 }
 "4292
 [v _SearchForLongAddress `(uc ~T0 @X0 1 ef ]
@@ -17054,15 +16654,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4296
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1828  ]
-[e $U 1829  ]
+[e $ < -> _i `i -> 10 `i 1791  ]
+[e $U 1792  ]
 "4297
-[e :U 1828 ]
+[e :U 1791 ]
 [; ;miwi_pro.c: 4297: {
 {
 [; ;miwi_pro.c: 4298: if(ConnectionTable[i].status.bits.isValid && ConnectionTable[i].status.bits.longAddressValid)
 "4298
-[e $ ! && != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 2 `i -> -> -> 0 `i `uc `i 1831  ]
+[e $ ! && != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 2 `i -> -> -> 0 `i `uc `i 1794  ]
 [; ;miwi_pro.c: 4299: {
 "4299
 {
@@ -17070,30 +16670,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4300
 {
 [e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 8 `i 1832  ]
-[e $U 1833  ]
+[e $ < -> _j `i -> 8 `i 1795  ]
+[e $U 1796  ]
 "4301
-[e :U 1832 ]
+[e :U 1795 ]
 [; ;miwi_pro.c: 4301: {
 {
 [; ;miwi_pro.c: 4302: if(ConnectionTable[i].Address[j] != tempLongAddress[j])
 "4302
-[e $ ! != -> *U + &U . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 2 * -> _j `ux -> -> # *U &U . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 2 `ui `ux `i -> *U + &U _tempLongAddress * -> _j `ux -> -> # *U &U _tempLongAddress `ui `ux `i 1835  ]
+[e $ ! != -> *U + &U . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 2 * -> _j `ux -> -> # *U &U . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 2 `ui `ux `i -> *U + &U _tempLongAddress * -> _j `ux -> -> # *U &U _tempLongAddress `ui `ux `i 1798  ]
 [; ;miwi_pro.c: 4303: {
 "4303
 {
 [; ;miwi_pro.c: 4304: goto EndOfSearchLoop;
 "4304
-[e $U 1836  ]
+[e $U 1799  ]
 "4305
 }
-[e :U 1835 ]
+[e :U 1798 ]
 "4306
 }
 "4300
 [e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 8 `i 1832  ]
-[e :U 1833 ]
+[e $ < -> _j `i -> 8 `i 1795  ]
+[e :U 1796 ]
 "4306
 }
 [; ;miwi_pro.c: 4305: }
@@ -17101,31 +16701,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 4307: return i;
 "4307
 [e ) _i ]
-[e $UE 1827  ]
+[e $UE 1790  ]
 "4308
 }
-[e :U 1831 ]
+[e :U 1794 ]
 [; ;miwi_pro.c: 4308: }
 [; ;miwi_pro.c: 4309: EndOfSearchLoop:
 "4309
-[e :U 1836 ]
+[e :U 1799 ]
 [; ;miwi_pro.c: 4310: ;
 "4311
 }
 "4296
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1828  ]
-[e :U 1829 ]
+[e $ < -> _i `i -> 10 `i 1791  ]
+[e :U 1792 ]
 "4311
 }
 [; ;miwi_pro.c: 4311: }
 [; ;miwi_pro.c: 4312: return 0xFF;
 "4312
 [e ) -> -> 255 `i `uc ]
-[e $UE 1827  ]
+[e $UE 1790  ]
 [; ;miwi_pro.c: 4313: }
 "4313
-[e :UE 1827 ]
+[e :UE 1790 ]
 }
 "4338
 [v _AddNodeToNetworkTable `(uc ~T0 @X0 1 ef ]
@@ -17141,7 +16741,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _handle -> -> 255 `i `uc ]
 [; ;miwi_pro.c: 4342: if(tempNodeStatus.bits.longAddressValid)
 "4342
-[e $ ! != -> . . _tempNodeStatus 1 2 `i -> -> -> 0 `i `uc `i 1838  ]
+[e $ ! != -> . . _tempNodeStatus 1 2 `i -> -> -> 0 `i `uc `i 1801  ]
 [; ;miwi_pro.c: 4343: {
 "4343
 {
@@ -17151,16 +16751,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4345
 }
 [; ;miwi_pro.c: 4345: }
-[e $U 1839  ]
+[e $U 1802  ]
 "4346
-[e :U 1838 ]
+[e :U 1801 ]
 [; ;miwi_pro.c: 4346: else
 [; ;miwi_pro.c: 4347: {
 "4347
 {
 [; ;miwi_pro.c: 4348: if(tempNodeStatus.bits.shortAddressValid)
 "4348
-[e $ ! != -> . . _tempNodeStatus 1 3 `i -> -> -> 0 `i `uc `i 1840  ]
+[e $ ! != -> . . _tempNodeStatus 1 3 `i -> -> -> 0 `i `uc `i 1803  ]
 [; ;miwi_pro.c: 4349: {
 "4349
 {
@@ -17169,15 +16769,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _handle ( _SearchForShortAddress ..  ]
 "4351
 }
-[e :U 1840 ]
+[e :U 1803 ]
 "4352
 }
-[e :U 1839 ]
+[e :U 1802 ]
 [; ;miwi_pro.c: 4351: }
 [; ;miwi_pro.c: 4352: }
 [; ;miwi_pro.c: 4354: if(handle==0xFF)
 "4354
-[e $ ! == -> _handle `i -> 255 `i 1841  ]
+[e $ ! == -> _handle `i -> 255 `i 1804  ]
 [; ;miwi_pro.c: 4355: {
 "4355
 {
@@ -17186,11 +16786,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _handle ( _findNextNetworkEntry ..  ]
 "4357
 }
-[e :U 1841 ]
+[e :U 1804 ]
 [; ;miwi_pro.c: 4357: }
 [; ;miwi_pro.c: 4359: if(handle != 0xFF)
 "4359
-[e $ ! != -> _handle `i -> 255 `i 1842  ]
+[e $ ! != -> _handle `i -> 255 `i 1805  ]
 [; ;miwi_pro.c: 4360: {
 "4360
 {
@@ -17199,7 +16799,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . *U + &U _ConnectionTable * -> _handle `ux -> -> # *U &U _ConnectionTable `ui `ux 3 0 . _tempNodeStatus 0 ]
 [; ;miwi_pro.c: 4367: if(tempNodeStatus.bits.longAddressValid)
 "4367
-[e $ ! != -> . . _tempNodeStatus 1 2 `i -> -> -> 0 `i `uc `i 1843  ]
+[e $ ! != -> . . _tempNodeStatus 1 2 `i -> -> -> 0 `i `uc `i 1806  ]
 [; ;miwi_pro.c: 4368: {
 "4368
 {
@@ -17210,10 +16810,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4370
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1844  ]
-[e $U 1845  ]
+[e $ < -> _i `i -> 8 `i 1807  ]
+[e $U 1808  ]
 "4371
-[e :U 1844 ]
+[e :U 1807 ]
 [; ;miwi_pro.c: 4371: {
 {
 [; ;miwi_pro.c: 4372: ConnectionTable[handle].Address[i] = tempLongAddress[i];
@@ -17223,18 +16823,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "4370
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1844  ]
-[e :U 1845 ]
+[e $ < -> _i `i -> 8 `i 1807  ]
+[e :U 1808 ]
 "4373
 }
 "4374
 }
-[e :U 1843 ]
+[e :U 1806 ]
 [; ;miwi_pro.c: 4373: }
 [; ;miwi_pro.c: 4374: }
 [; ;miwi_pro.c: 4376: if(tempNodeStatus.bits.shortAddressValid)
 "4376
-[e $ ! != -> . . _tempNodeStatus 1 3 `i -> -> -> 0 `i `uc `i 1847  ]
+[e $ ! != -> . . _tempNodeStatus 1 3 `i -> -> -> 0 `i `uc `i 1810  ]
 [; ;miwi_pro.c: 4377: {
 "4377
 {
@@ -17243,22 +16843,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . *U + &U _ConnectionTable * -> _handle `ux -> -> # *U &U _ConnectionTable `ui `ux 1 1 . _tempShortAddress 1 ]
 "4379
 }
-[e :U 1847 ]
+[e :U 1810 ]
 [; ;miwi_pro.c: 4379: }
 [; ;miwi_pro.c: 4381: ConnectionTable[handle].PANID.Val = tempPANID.Val;
 "4381
 [e = . . *U + &U _ConnectionTable * -> _handle `ux -> -> # *U &U _ConnectionTable `ui `ux 0 1 . _tempPANID 1 ]
 "4385
 }
-[e :U 1842 ]
+[e :U 1805 ]
 [; ;miwi_pro.c: 4385: }
 [; ;miwi_pro.c: 4387: return handle;
 "4387
 [e ) _handle ]
-[e $UE 1837  ]
+[e $UE 1800  ]
 [; ;miwi_pro.c: 4388: }
 "4388
-[e :UE 1837 ]
+[e :UE 1800 ]
 }
 "4409
 [v _isSameAddress `(E8144 ~T0 @X0 1 ef2`*uc`*uc ]
@@ -17279,31 +16879,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4413
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1849  ]
-[e $U 1850  ]
+[e $ < -> _i `i -> 8 `i 1812  ]
+[e $U 1813  ]
 "4414
-[e :U 1849 ]
+[e :U 1812 ]
 [; ;miwi_pro.c: 4414: {
 {
 [; ;miwi_pro.c: 4415: if( Address1[i] != Address2[i] )
 "4415
-[e $ ! != -> *U + _Address1 * -> _i `ux -> -> # *U _Address1 `ui `ux `i -> *U + _Address2 * -> _i `ux -> -> # *U _Address2 `ui `ux `i 1852  ]
+[e $ ! != -> *U + _Address1 * -> _i `ux -> -> # *U _Address1 `ui `ux `i -> *U + _Address2 * -> _i `ux -> -> # *U _Address2 `ui `ux `i 1815  ]
 [; ;miwi_pro.c: 4416: {
 "4416
 {
 [; ;miwi_pro.c: 4417: return 0;
 "4417
 [e ) -> -> 0 `i `E8144 ]
-[e $UE 1848  ]
+[e $UE 1811  ]
 "4418
 }
-[e :U 1852 ]
+[e :U 1815 ]
 "4419
 }
 "4413
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1849  ]
-[e :U 1850 ]
+[e $ < -> _i `i -> 8 `i 1812  ]
+[e :U 1813 ]
 "4419
 }
 [; ;miwi_pro.c: 4418: }
@@ -17311,10 +16911,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 4420: return 1;
 "4420
 [e ) -> -> 1 `i `E8144 ]
-[e $UE 1848  ]
+[e $UE 1811  ]
 [; ;miwi_pro.c: 4421: }
 "4421
-[e :UE 1848 ]
+[e :UE 1811 ]
 }
 "4530
 [v _MiApp_ProtocolInit `(uc ~T0 @X0 1 ef1`uc ]
@@ -17346,10 +16946,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4570
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1854  ]
-[e $U 1855  ]
+[e $ < -> _i `i -> 10 `i 1817  ]
+[e $U 1818  ]
 "4571
-[e :U 1854 ]
+[e :U 1817 ]
 [; ;miwi_pro.c: 4571: {
 {
 [; ;miwi_pro.c: 4572: ConnectionTable[i].status.Val = 0;
@@ -17359,8 +16959,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "4570
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1854  ]
-[e :U 1855 ]
+[e $ < -> _i `i -> 10 `i 1817  ]
+[e :U 1818 ]
 "4573
 }
 [; ;miwi_pro.c: 4573: }
@@ -17368,10 +16968,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4576
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i / -> 32 `i -> 8 `i 1857  ]
-[e $U 1858  ]
+[e $ < -> _i `i / -> 32 `i -> 8 `i 1820  ]
+[e $U 1821  ]
 "4577
-[e :U 1857 ]
+[e :U 1820 ]
 [; ;miwi_pro.c: 4577: {
 {
 [; ;miwi_pro.c: 4578: RoutingTable[i] = 0;
@@ -17381,8 +16981,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "4576
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i / -> 32 `i -> 8 `i 1857  ]
-[e :U 1858 ]
+[e $ < -> _i `i / -> 32 `i -> 8 `i 1820  ]
+[e :U 1821 ]
 "4579
 }
 [; ;miwi_pro.c: 4579: }
@@ -17390,10 +16990,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4580
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 32 `i 1860  ]
-[e $U 1861  ]
+[e $ < -> _i `i -> 32 `i 1823  ]
+[e $U 1824  ]
 "4581
-[e :U 1860 ]
+[e :U 1823 ]
 [; ;miwi_pro.c: 4581: {
 {
 [; ;miwi_pro.c: 4582: RouterFailures[i] = 0;
@@ -17403,8 +17003,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "4580
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 32 `i 1860  ]
-[e :U 1861 ]
+[e $ < -> _i `i -> 32 `i 1823  ]
+[e :U 1824 ]
 "4583
 }
 [; ;miwi_pro.c: 4583: }
@@ -17433,10 +17033,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4599
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 2 `i 1863  ]
-[e $U 1864  ]
+[e $ < -> _i `i -> 2 `i 1826  ]
+[e $U 1827  ]
 "4600
-[e :U 1863 ]
+[e :U 1826 ]
 [; ;miwi_pro.c: 4600: {
 {
 [; ;miwi_pro.c: 4601: indirectMessages[i].flags.Val = 0;
@@ -17446,14 +17046,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "4599
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 2 `i 1863  ]
-[e :U 1864 ]
+[e $ < -> _i `i -> 2 `i 1826  ]
+[e :U 1827 ]
 "4602
 }
 [; ;miwi_pro.c: 4602: }
 [; ;miwi_pro.c: 4621: if( bNetworkFreezer )
 "4621
-[e $ ! != -> _bNetworkFreezer `i -> -> -> 0 `i `uc `i 1866  ]
+[e $ ! != -> _bNetworkFreezer `i -> -> -> 0 `i `uc `i 1829  ]
 [; ;miwi_pro.c: 4622: {
 "4622
 {
@@ -17462,34 +17062,34 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _NVMRead (3 , , &U _currentChannel _nvmCurrentChannel -> -> 1 `i `ui ]
 [; ;miwi_pro.c: 4624: if( currentChannel >= 32 )
 "4624
-[e $ ! >= -> _currentChannel `i -> 32 `i 1867  ]
+[e $ ! >= -> _currentChannel `i -> 32 `i 1830  ]
 [; ;miwi_pro.c: 4625: {
 "4625
 {
 [; ;miwi_pro.c: 4626: return 0;
 "4626
 [e ) -> -> 0 `i `uc ]
-[e $UE 1853  ]
+[e $UE 1816  ]
 "4627
 }
-[e :U 1867 ]
+[e :U 1830 ]
 [; ;miwi_pro.c: 4627: }
 [; ;miwi_pro.c: 4629: NVMRead( (uint8_t *)myShortAddress.v, nvmMyShortAddress, 2);
 "4629
 [e ( _NVMRead (3 , , &U . _myShortAddress 0 _nvmMyShortAddress -> -> 2 `i `ui ]
 [; ;miwi_pro.c: 4630: if( myShortAddress.Val == 0xFFFF )
 "4630
-[e $ ! == . _myShortAddress 1 -> 65535 `ui 1868  ]
+[e $ ! == . _myShortAddress 1 -> 65535 `ui 1831  ]
 [; ;miwi_pro.c: 4631: {
 "4631
 {
 [; ;miwi_pro.c: 4632: return 0;
 "4632
 [e ) -> -> 0 `i `uc ]
-[e $UE 1853  ]
+[e $UE 1816  ]
 "4633
 }
-[e :U 1868 ]
+[e :U 1831 ]
 [; ;miwi_pro.c: 4633: }
 [; ;miwi_pro.c: 4635: NVMRead( (uint8_t *)myPANID.v, nvmMyPANID, 2);
 "4635
@@ -17541,9 +17141,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4660
 }
 [; ;miwi_pro.c: 4660: }
-[e $U 1869  ]
+[e $U 1832  ]
 "4661
-[e :U 1866 ]
+[e :U 1829 ]
 [; ;miwi_pro.c: 4661: else
 [; ;miwi_pro.c: 4662: {
 "4662
@@ -17570,10 +17170,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4671
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i / -> 32 `i -> 8 `i 1870  ]
-[e $U 1871  ]
+[e $ < -> _i `i / -> 32 `i -> 8 `i 1833  ]
+[e $U 1834  ]
 "4672
-[e :U 1870 ]
+[e :U 1833 ]
 [; ;miwi_pro.c: 4672: {
 {
 [; ;miwi_pro.c: 4673: RoutingTable[i] = 0;
@@ -17583,8 +17183,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "4671
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i / -> 32 `i -> 8 `i 1870  ]
-[e :U 1871 ]
+[e $ < -> _i `i / -> 32 `i -> 8 `i 1833  ]
+[e :U 1834 ]
 "4674
 }
 [; ;miwi_pro.c: 4674: }
@@ -17592,10 +17192,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4675
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 32 `i 1873  ]
-[e $U 1874  ]
+[e $ < -> _i `i -> 32 `i 1836  ]
+[e $U 1837  ]
 "4676
-[e :U 1873 ]
+[e :U 1836 ]
 [; ;miwi_pro.c: 4676: {
 {
 "4677
@@ -17605,10 +17205,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4678
 {
 [e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i / -> 32 `i -> 8 `i 1876  ]
-[e $U 1877  ]
+[e $ < -> _j `i / -> 32 `i -> 8 `i 1839  ]
+[e $U 1840  ]
 "4679
-[e :U 1876 ]
+[e :U 1839 ]
 [; ;miwi_pro.c: 4679: {
 {
 [; ;miwi_pro.c: 4680: NeighborRoutingTable[i][j] = 0;
@@ -17618,8 +17218,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "4678
 [e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i / -> 32 `i -> 8 `i 1876  ]
-[e :U 1877 ]
+[e $ < -> _j `i / -> 32 `i -> 8 `i 1839  ]
+[e :U 1840 ]
 "4681
 }
 [; ;miwi_pro.c: 4681: }
@@ -17630,13 +17230,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "4675
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 32 `i 1873  ]
-[e :U 1874 ]
+[e $ < -> _i `i -> 32 `i 1836  ]
+[e :U 1837 ]
 "4683
 }
 "4685
 }
-[e :U 1869 ]
+[e :U 1832 ]
 [; ;miwi_pro.c: 4683: }
 [; ;miwi_pro.c: 4685: }
 [; ;miwi_pro.c: 4689: MIP.actionFlags.Val = 0;
@@ -17696,10 +17296,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 4737: return 1;
 "4737
 [e ) -> -> 1 `i `uc ]
-[e $UE 1853  ]
+[e $UE 1816  ]
 [; ;miwi_pro.c: 4739: }
 "4739
-[e :UE 1853 ]
+[e :UE 1816 ]
 }
 "4855
 [v _MiApp_SetChannel `(uc ~T0 @X0 1 ef1`uc ]
@@ -17714,7 +17314,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;miwi_pro.c: 4857: if( MiMAC_SetChannel(channel, 0) )
 "4857
-[e $ ! != -> ( _MiMAC_SetChannel (2 , _channel -> -> 0 `i `uc `i -> -> -> 0 `i `uc `i 1880  ]
+[e $ ! != -> ( _MiMAC_SetChannel (2 , _channel -> -> 0 `i `uc `i -> -> -> 0 `i `uc `i 1843  ]
 [; ;miwi_pro.c: 4858: {
 "4858
 {
@@ -17727,18 +17327,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 4863: return 1;
 "4863
 [e ) -> -> 1 `i `uc ]
-[e $UE 1879  ]
+[e $UE 1842  ]
 "4864
 }
-[e :U 1880 ]
+[e :U 1843 ]
 [; ;miwi_pro.c: 4864: }
 [; ;miwi_pro.c: 4865: return 0;
 "4865
 [e ) -> -> 0 `i `uc ]
-[e $UE 1879  ]
+[e $UE 1842  ]
 [; ;miwi_pro.c: 4866: }
 "4866
-[e :UE 1879 ]
+[e :UE 1842 ]
 }
 "4909
 [v _MiApp_ConnectionMode `(v ~T0 @X0 1 ef1`uc ]
@@ -17753,16 +17353,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;miwi_pro.c: 4911: if( Mode > 3 )
 "4911
-[e $ ! > -> _Mode `i -> 3 `i 1882  ]
+[e $ ! > -> _Mode `i -> 3 `i 1845  ]
 [; ;miwi_pro.c: 4912: {
 "4912
 {
 [; ;miwi_pro.c: 4913: return;
 "4913
-[e $UE 1881  ]
+[e $UE 1844  ]
 "4914
 }
-[e :U 1882 ]
+[e :U 1845 ]
 [; ;miwi_pro.c: 4914: }
 [; ;miwi_pro.c: 4915: ConnMode = Mode;
 "4915
@@ -17775,7 +17375,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _NVMWrite (3 , , &U _ConnMode _nvmConnMode -> -> 1 `i `ui ]
 [; ;miwi_pro.c: 4921: }
 "4921
-[e :UE 1881 ]
+[e :UE 1844 ]
 }
 "4967
 [v _MiApp_SearchConnection `(uc ~T0 @X0 1 ef2`uc`ul ]
@@ -17808,10 +17408,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4974
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 4 `i 1884  ]
-[e $U 1885  ]
+[e $ < -> _i `i -> 4 `i 1847  ]
+[e $U 1848  ]
 "4975
-[e :U 1884 ]
+[e :U 1847 ]
 [; ;miwi_pro.c: 4975: {
 {
 [; ;miwi_pro.c: 4976: ActiveScanResults[i].Channel = 0xFF;
@@ -17821,8 +17421,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "4974
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 4 `i 1884  ]
-[e :U 1885 ]
+[e $ < -> _i `i -> 4 `i 1847  ]
+[e :U 1848 ]
 "4977
 }
 [; ;miwi_pro.c: 4977: }
@@ -17837,14 +17437,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _i -> -> 0 `i `uc ]
 [; ;miwi_pro.c: 4982: while(i < 32 )
 "4982
-[e $U 1887  ]
-[e :U 1888 ]
+[e $U 1850  ]
+[e :U 1851 ]
 [; ;miwi_pro.c: 4983: {
 "4983
 {
 [; ;miwi_pro.c: 4984: if( ChannelMap & 0x07FFF800 & (channelMask << i) )
 "4984
-[e $ ! != & & _ChannelMap -> -> 134215680 `l `ul << _channelMask _i -> -> 0 `i `ul 1890  ]
+[e $ ! != & & _ChannelMap -> -> 134215680 `l `ul << _channelMask _i -> -> 0 `i `ul 1853  ]
 [; ;miwi_pro.c: 4985: {
 "4985
 {
@@ -17875,13 +17475,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _t1 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 5002: while(1)
 "5002
-[e :U 1892 ]
+[e :U 1855 ]
 [; ;miwi_pro.c: 5003: {
 "5003
 {
 [; ;miwi_pro.c: 5004: if( MiApp_MessageAvailable())
 "5004
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1894  ]
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1857  ]
 [; ;miwi_pro.c: 5005: {
 "5005
 {
@@ -17890,32 +17490,32 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _MiApp_DiscardMessage ..  ]
 "5007
 }
-[e :U 1894 ]
+[e :U 1857 ]
 [; ;miwi_pro.c: 5007: }
 [; ;miwi_pro.c: 5009: t2 = MiWi_TickGet();
 "5009
 [e = _t2 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 5010: if( (t2.Val - t1.Val) > ((uint32_t)(ScanTime[ScanDuration])) )
 "5010
-[e $ ! > - . _t2 0 . _t1 0 *U + &U _ScanTime * -> _ScanDuration `ux -> -> # *U &U _ScanTime `ui `ux 1895  ]
+[e $ ! > - . _t2 0 . _t1 0 *U + &U _ScanTime * -> _ScanDuration `ux -> -> # *U &U _ScanTime `ui `ux 1858  ]
 [; ;miwi_pro.c: 5011: {
 "5011
 {
 [; ;miwi_pro.c: 5013: break;
 "5013
-[e $U 1893  ]
+[e $U 1856  ]
 "5014
 }
-[e :U 1895 ]
+[e :U 1858 ]
 "5015
 }
-[e :U 1891 ]
+[e :U 1854 ]
 "5002
-[e $U 1892  ]
-[e :U 1893 ]
+[e $U 1855  ]
+[e :U 1856 ]
 "5017
 }
-[e :U 1890 ]
+[e :U 1853 ]
 [; ;miwi_pro.c: 5014: }
 [; ;miwi_pro.c: 5015: }
 [; ;miwi_pro.c: 5017: }
@@ -17924,10 +17524,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ++ _i -> -> 1 `i `uc ]
 "5019
 }
-[e :U 1887 ]
+[e :U 1850 ]
 "4982
-[e $ < -> _i `i -> 32 `i 1888  ]
-[e :U 1889 ]
+[e $ < -> _i `i -> 32 `i 1851  ]
+[e :U 1852 ]
 [; ;miwi_pro.c: 5019: }
 [; ;miwi_pro.c: 5021: MiApp_SetChannel(backupChannel);
 "5021
@@ -17938,10 +17538,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 5024: return ActiveScanResultIndex;
 "5024
 [e ) _ActiveScanResultIndex ]
-[e $UE 1883  ]
+[e $UE 1846  ]
 [; ;miwi_pro.c: 5025: }
 "5025
-[e :UE 1883 ]
+[e :UE 1846 ]
 }
 "5084
 [v _MiApp_EstablishConnection `(uc ~T0 @X0 1 ef2`uc`uc ]
@@ -17968,7 +17568,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 5088: MIWI_TICK t1, t2;
 [; ;miwi_pro.c: 5090: if( Mode == 0x01 )
 "5090
-[e $ ! == -> _Mode `i -> 1 `i 1897  ]
+[e $ ! == -> _Mode `i -> 1 `i 1860  ]
 [; ;miwi_pro.c: 5091: {
 "5091
 {
@@ -17977,14 +17577,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _OpenSocket ..  ]
 [; ;miwi_pro.c: 5096: while(openSocketInfo.status.bits.requestIsOpen)
 "5096
-[e $U 1898  ]
-[e :U 1899 ]
+[e $U 1861  ]
+[e :U 1862 ]
 [; ;miwi_pro.c: 5097: {
 "5097
 {
 [; ;miwi_pro.c: 5098: if( MiApp_MessageAvailable())
 "5098
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1901  ]
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1864  ]
 [; ;miwi_pro.c: 5099: {
 "5099
 {
@@ -17993,76 +17593,76 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _MiApp_DiscardMessage ..  ]
 "5101
 }
-[e :U 1901 ]
+[e :U 1864 ]
 "5111
 }
-[e :U 1898 ]
+[e :U 1861 ]
 "5096
-[e $ != -> . . . _openSocketInfo 0 0 1 `i -> -> -> 0 `i `uc `i 1899  ]
-[e :U 1900 ]
+[e $ != -> . . . _openSocketInfo 0 0 1 `i -> -> -> 0 `i `uc `i 1862  ]
+[e :U 1863 ]
 [; ;miwi_pro.c: 5101: }
 [; ;miwi_pro.c: 5111: }
 [; ;miwi_pro.c: 5112: if( openSocketInfo.status.bits.matchFound )
 "5112
-[e $ ! != -> . . . _openSocketInfo 0 0 0 `i -> -> -> 0 `i `uc `i 1902  ]
+[e $ ! != -> . . . _openSocketInfo 0 0 0 `i -> -> -> 0 `i `uc `i 1865  ]
 [; ;miwi_pro.c: 5113: {
 "5113
 {
 [; ;miwi_pro.c: 5114: return openSocketInfo.socketHandle;
 "5114
 [e ) . _openSocketInfo 1 ]
-[e $UE 1896  ]
+[e $UE 1859  ]
 "5115
 }
-[e :U 1902 ]
+[e :U 1865 ]
 [; ;miwi_pro.c: 5115: }
 [; ;miwi_pro.c: 5116: return 0xFF;
 "5116
 [e ) -> -> 255 `i `uc ]
-[e $UE 1896  ]
+[e $UE 1859  ]
 "5117
 }
 [; ;miwi_pro.c: 5117: }
-[e $U 1903  ]
+[e $U 1866  ]
 "5118
-[e :U 1897 ]
+[e :U 1860 ]
 [; ;miwi_pro.c: 5118: else if( Mode == 0x00)
-[e $ ! == -> _Mode `i -> 0 `i 1904  ]
+[e $ ! == -> _Mode `i -> 0 `i 1867  ]
 [; ;miwi_pro.c: 5119: {
 "5119
 {
 [; ;miwi_pro.c: 5120: if( ActiveScanIndex == 0xFF )
 "5120
-[e $ ! == -> _ActiveScanIndex `i -> 255 `i 1905  ]
+[e $ ! == -> _ActiveScanIndex `i -> 255 `i 1868  ]
 [; ;miwi_pro.c: 5121: {
 "5121
 {
 [; ;miwi_pro.c: 5122: while( MiApp_SearchConnection(10, ((uint32_t)0x00000001)<<currentChannel) == 0 )
 "5122
-[e $U 1906  ]
-[e :U 1907 ]
+[e $U 1869  ]
+[e :U 1870 ]
 [; ;miwi_pro.c: 5123: {
 "5123
 {
 [; ;miwi_pro.c: 5124: if( --retry == 0 )
 "5124
-[e $ ! == -> =- _retry -> -> 1 `i `uc `i -> 0 `i 1909  ]
+[e $ ! == -> =- _retry -> -> 1 `i `uc `i -> 0 `i 1872  ]
 [; ;miwi_pro.c: 5125: {
 "5125
 {
 [; ;miwi_pro.c: 5126: return 0xFF;
 "5126
 [e ) -> -> 255 `i `uc ]
-[e $UE 1896  ]
+[e $UE 1859  ]
 "5127
 }
-[e :U 1909 ]
+[e :U 1872 ]
 "5128
 }
-[e :U 1906 ]
+[e :U 1869 ]
 "5122
-[e $ == -> ( _MiApp_SearchConnection (2 , -> -> 10 `i `uc << -> -> 1 `i `ul _currentChannel `i -> 0 `i 1907  ]
-[e :U 1908 ]
+[e $ == -> ( _MiApp_SearchConnection (2 , -> -> 10 `i `uc << -> -> 1 `i `ul _currentChannel `i -> 0 `i 1870  ]
+[e :U 1871 ]
 [; ;miwi_pro.c: 5127: }
 [; ;miwi_pro.c: 5128: }
 [; ;miwi_pro.c: 5129: ActiveScanIndex = 0;
@@ -18070,7 +17670,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _ActiveScanIndex -> -> 0 `i `uc ]
 "5130
 }
-[e :U 1905 ]
+[e :U 1868 ]
 [; ;miwi_pro.c: 5130: }
 [; ;miwi_pro.c: 5133: tempPANID.Val = ActiveScanResults[ActiveScanIndex].PANID.Val;
 "5133
@@ -18086,26 +17686,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _myParent ( _SearchForShortAddress ..  ]
 [; ;miwi_pro.c: 5146: if( myParent == 0xFF )
 "5146
-[e $ ! == -> _myParent `i -> 255 `i 1910  ]
+[e $ ! == -> _myParent `i -> 255 `i 1873  ]
 [; ;miwi_pro.c: 5147: {
 "5147
 {
 [; ;miwi_pro.c: 5148: if( (myParent = findNextNetworkEntry()) == 0xFF )
 "5148
-[e $ ! == -> = _myParent ( _findNextNetworkEntry ..  `i -> 255 `i 1911  ]
+[e $ ! == -> = _myParent ( _findNextNetworkEntry ..  `i -> 255 `i 1874  ]
 [; ;miwi_pro.c: 5149: {
 "5149
 {
 [; ;miwi_pro.c: 5150: return 0xFF;
 "5150
 [e ) -> -> 255 `i `uc ]
-[e $UE 1896  ]
+[e $UE 1859  ]
 "5151
 }
-[e :U 1911 ]
+[e :U 1874 ]
 "5152
 }
-[e :U 1910 ]
+[e :U 1873 ]
 [; ;miwi_pro.c: 5151: }
 [; ;miwi_pro.c: 5152: }
 [; ;miwi_pro.c: 5154: ConnectionTable[myParent].status.Val = 0;
@@ -18127,10 +17727,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "5168
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 1 `i 1912  ]
-[e $U 1913  ]
+[e $ < -> _i `i -> 1 `i 1875  ]
+[e $U 1876  ]
 "5169
-[e :U 1912 ]
+[e :U 1875 ]
 [; ;miwi_pro.c: 5169: {
 {
 [; ;miwi_pro.c: 5170: ConnectionTable[myParent].PeerInfo[i] = ActiveScanResults[ActiveScanIndex].PeerInfo[i];
@@ -18140,8 +17740,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "5168
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 1 `i 1912  ]
-[e :U 1913 ]
+[e $ < -> _i `i -> 1 `i 1875  ]
+[e :U 1876 ]
 "5171
 }
 [; ;miwi_pro.c: 5171: }
@@ -18181,10 +17781,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "5190
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 1 `i 1915  ]
-[e $U 1916  ]
+[e $ < -> _i `i -> 1 `i 1878  ]
+[e $U 1879  ]
 "5191
-[e :U 1915 ]
+[e :U 1878 ]
 [; ;miwi_pro.c: 5191: {
 {
 [; ;miwi_pro.c: 5192: TxBuffer[TxData++] = AdditionalNodeID[i];
@@ -18194,8 +17794,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "5190
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 1 `i 1915  ]
-[e :U 1916 ]
+[e $ < -> _i `i -> 1 `i 1878  ]
+[e :U 1879 ]
 "5193
 }
 [; ;miwi_pro.c: 5193: }
@@ -18207,14 +17807,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _t1 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 5203: while(ConnectionTable[myParent].status.bits.FinishJoin == 0 )
 "5203
-[e $U 1918  ]
-[e :U 1919 ]
+[e $U 1881  ]
+[e :U 1882 ]
 [; ;miwi_pro.c: 5204: {
 "5204
 {
 [; ;miwi_pro.c: 5205: if( MiApp_MessageAvailable())
 "5205
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1921  ]
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1884  ]
 [; ;miwi_pro.c: 5206: {
 "5206
 {
@@ -18223,48 +17823,48 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _MiApp_DiscardMessage ..  ]
 "5208
 }
-[e :U 1921 ]
+[e :U 1884 ]
 [; ;miwi_pro.c: 5208: }
 [; ;miwi_pro.c: 5210: t2 = MiWi_TickGet();
 "5210
 [e = _t2 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 5211: if( (t2.Val - t1.Val) > ((uint32_t)(16000000)/32) )
 "5211
-[e $ ! > - . _t2 0 . _t1 0 / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul 1922  ]
+[e $ ! > - . _t2 0 . _t1 0 / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul 1885  ]
 [; ;miwi_pro.c: 5212: {
 "5212
 {
 [; ;miwi_pro.c: 5213: return 0xFF;
 "5213
 [e ) -> -> 255 `i `uc ]
-[e $UE 1896  ]
+[e $UE 1859  ]
 "5214
 }
-[e :U 1922 ]
+[e :U 1885 ]
 "5215
 }
-[e :U 1918 ]
+[e :U 1881 ]
 "5203
-[e $ == -> . . . *U + &U _ConnectionTable * -> _myParent `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 4 `i -> 0 `i 1919  ]
-[e :U 1920 ]
+[e $ == -> . . . *U + &U _ConnectionTable * -> _myParent `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 4 `i -> 0 `i 1882  ]
+[e :U 1883 ]
 [; ;miwi_pro.c: 5214: }
 [; ;miwi_pro.c: 5215: }
 [; ;miwi_pro.c: 5220: return myParent;
 "5220
 [e ) _myParent ]
-[e $UE 1896  ]
+[e $UE 1859  ]
 "5221
 }
-[e :U 1904 ]
+[e :U 1867 ]
 "5222
-[e :U 1903 ]
+[e :U 1866 ]
 [; ;miwi_pro.c: 5221: }
 [; ;miwi_pro.c: 5222: return 0xFF;
 [e ) -> -> 255 `i `uc ]
-[e $UE 1896  ]
+[e $UE 1859  ]
 [; ;miwi_pro.c: 5223: }
 "5223
-[e :UE 1896 ]
+[e :UE 1859 ]
 }
 "5225
 [v _MiApp_MessageAvailable `(uc ~T0 @X0 1 ef ]
@@ -18280,10 +17880,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 5229: return MiWiPROStateMachine.bits.RxHasUserData;
 "5229
 [e ) . . _MiWiPROStateMachine 1 2 ]
-[e $UE 1923  ]
+[e $UE 1886  ]
 [; ;miwi_pro.c: 5230: }
 "5230
-[e :UE 1923 ]
+[e :UE 1886 ]
 }
 "5232
 [v _MiApp_DiscardMessage `(v ~T0 @X0 1 ef ]
@@ -18301,7 +17901,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _MiMAC_DiscardPacket ..  ]
 [; ;miwi_pro.c: 5236: }
 "5236
-[e :UE 1924 ]
+[e :UE 1887 ]
 }
 "5272
 [v _MiApp_BroadcastPacket `(uc ~T0 @X0 1 ef1`uc ]
@@ -18317,10 +17917,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 5274: return MultiCast(0x01, SecEn);
 "5274
 [e ) -> ( _MultiCast (2 , -> -> 1 `i `uc -> _SecEn `E8144 `uc ]
-[e $UE 1925  ]
+[e $UE 1888  ]
 [; ;miwi_pro.c: 5275: }
 "5275
-[e :UE 1925 ]
+[e :UE 1888 ]
 }
 "5278
 [v _MultiCast `(E8144 ~T0 @X0 1 ef2`uc`E8144 ]
@@ -18348,56 +17948,56 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U _TxBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U . _myPANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux ]
 [; ;miwi_pro.c: 5284: switch( MultiCastMode )
 "5284
-[e $U 1928  ]
+[e $U 1891  ]
 [; ;miwi_pro.c: 5285: {
 "5285
 {
 [; ;miwi_pro.c: 5286: case 0x01:
 "5286
-[e :U 1929 ]
+[e :U 1892 ]
 [; ;miwi_pro.c: 5287: TxBuffer[4] = 0xFF;
 "5287
 [e = *U + &U _TxBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 255 `i `uc ]
 [; ;miwi_pro.c: 5288: break;
 "5288
-[e $U 1927  ]
+[e $U 1890  ]
 [; ;miwi_pro.c: 5290: case 0x03:
 "5290
-[e :U 1930 ]
+[e :U 1893 ]
 [; ;miwi_pro.c: 5291: TxBuffer[4] = 0xFE;
 "5291
 [e = *U + &U _TxBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 254 `i `uc ]
 [; ;miwi_pro.c: 5292: break;
 "5292
-[e $U 1927  ]
+[e $U 1890  ]
 [; ;miwi_pro.c: 5294: case 0x02:
 "5294
-[e :U 1931 ]
+[e :U 1894 ]
 [; ;miwi_pro.c: 5295: TxBuffer[4] = 0xFD;
 "5295
 [e = *U + &U _TxBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 253 `i `uc ]
 [; ;miwi_pro.c: 5296: break;
 "5296
-[e $U 1927  ]
+[e $U 1890  ]
 [; ;miwi_pro.c: 5298: default:
 "5298
-[e :U 1932 ]
+[e :U 1895 ]
 [; ;miwi_pro.c: 5299: return 0;
 "5299
 [e ) -> -> 0 `i `E8144 ]
-[e $UE 1926  ]
+[e $UE 1889  ]
 "5300
 }
 [; ;miwi_pro.c: 5300: }
-[e $U 1927  ]
+[e $U 1890  ]
 "5284
-[e :U 1928 ]
-[e [\ _MultiCastMode , $ -> -> 1 `i `uc 1929
- , $ -> -> 3 `i `uc 1930
- , $ -> -> 2 `i `uc 1931
- 1932 ]
+[e :U 1891 ]
+[e [\ _MultiCastMode , $ -> -> 1 `i `uc 1892
+ , $ -> -> 3 `i `uc 1893
+ , $ -> -> 2 `i `uc 1894
+ 1895 ]
 "5300
-[e :U 1927 ]
+[e :U 1890 ]
 [; ;miwi_pro.c: 5301: TxBuffer[5] = 0xFF;
 "5301
 [e = *U + &U _TxBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 255 `i `uc ]
@@ -18418,7 +18018,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U _TxBuffer * -> -> -> 10 `i `ui `ux -> -> # *U &U _TxBuffer `ui `ux ++ _MiWiPROSeqNum -> -> 1 `i `uc ]
 [; ;miwi_pro.c: 5309: if( MultiCastMode == 0x01 )
 "5309
-[e $ ! == -> _MultiCastMode `i -> 1 `i 1933  ]
+[e $ ! == -> _MultiCastMode `i -> 1 `i 1896  ]
 [; ;miwi_pro.c: 5310: {
 "5310
 {
@@ -18429,37 +18029,37 @@ Version 3.2 HI-TECH Software Intermediate Code
 "5313
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1934  ]
-[e $U 1935  ]
+[e $ < -> _i `i -> 10 `i 1897  ]
+[e $U 1898  ]
 "5314
-[e :U 1934 ]
+[e :U 1897 ]
 [; ;miwi_pro.c: 5314: {
 {
 [; ;miwi_pro.c: 5315: if( ConnectionTable[i].status.bits.isValid && ConnectionTable[i].status.bits.RXOnWhenIdle == 0 )
 "5315
-[e $ ! && != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i == -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 0 `i -> 0 `i 1937  ]
+[e $ ! && != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i == -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 0 `i -> 0 `i 1900  ]
 [; ;miwi_pro.c: 5316: {
 "5316
 {
 [; ;miwi_pro.c: 5317: break;
 "5317
-[e $U 1935  ]
+[e $U 1898  ]
 "5318
 }
-[e :U 1937 ]
+[e :U 1900 ]
 "5319
 }
 "5313
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1934  ]
-[e :U 1935 ]
+[e $ < -> _i `i -> 10 `i 1897  ]
+[e :U 1898 ]
 "5319
 }
 [; ;miwi_pro.c: 5318: }
 [; ;miwi_pro.c: 5319: }
 [; ;miwi_pro.c: 5321: if( i < 10 )
 "5321
-[e $ ! < -> _i `i -> 10 `i 1938  ]
+[e $ ! < -> _i `i -> 10 `i 1901  ]
 [; ;miwi_pro.c: 5322: {
 "5322
 {
@@ -18468,10 +18068,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _SaveIndirectMessage (4 , , , , -> -> 1 `i `E8144 _myPANID -> -> 0 `i `*uc -> -> 0 `i `E8144 _SecEn ]
 "5328
 }
-[e :U 1938 ]
+[e :U 1901 ]
 "5329
 }
-[e :U 1933 ]
+[e :U 1896 ]
 [; ;miwi_pro.c: 5328: }
 [; ;miwi_pro.c: 5329: }
 [; ;miwi_pro.c: 5343: MTP.flags.Val = 0;
@@ -18492,10 +18092,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 5358: return MiMAC_SendPacket(MTP, TxBuffer, TxData);
 "5358
 [e ) -> ( _MiMAC_SendPacket (3 , , _MTP &U _TxBuffer _TxData `E8144 ]
-[e $UE 1926  ]
+[e $UE 1889  ]
 [; ;miwi_pro.c: 5359: }
 "5359
-[e :UE 1926 ]
+[e :UE 1889 ]
 }
 "5399
 [v _MiApp_UnicastConnection `(uc ~T0 @X0 1 ef2`uc`uc ]
@@ -18516,21 +18116,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 5402: uint8_t MiWiPROFrameControl;
 [; ;miwi_pro.c: 5404: if( ConnectionTable[ConnectionIndex].status.bits.isValid == 0 )
 "5404
-[e $ ! == -> . . . *U + &U _ConnectionTable * -> _ConnectionIndex `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> 0 `i 1940  ]
+[e $ ! == -> . . . *U + &U _ConnectionTable * -> _ConnectionIndex `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> 0 `i 1903  ]
 [; ;miwi_pro.c: 5405: {
 "5405
 {
 [; ;miwi_pro.c: 5406: return 0;
 "5406
 [e ) -> -> 0 `i `uc ]
-[e $UE 1939  ]
+[e $UE 1902  ]
 "5407
 }
-[e :U 1940 ]
+[e :U 1903 ]
 [; ;miwi_pro.c: 5407: }
 [; ;miwi_pro.c: 5408: if( MiWiPROAckRequired && TxBuffer[11])
 "5408
-[e $ ! && != -> _MiWiPROAckRequired `i -> -> -> 0 `i `E8144 `i != -> *U + &U _TxBuffer * -> -> -> 11 `i `ui `ux -> -> # *U &U _TxBuffer `ui `ux `i -> -> -> 0 `i `uc `i 1941  ]
+[e $ ! && != -> _MiWiPROAckRequired `i -> -> -> 0 `i `E8144 `i != -> *U + &U _TxBuffer * -> -> -> 11 `i `ui `ux -> -> # *U &U _TxBuffer `ui `ux `i -> -> -> 0 `i `uc `i 1904  ]
 [; ;miwi_pro.c: 5409: {
 "5409
 {
@@ -18549,9 +18149,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "5414
 }
 [; ;miwi_pro.c: 5414: }
-[e $U 1942  ]
+[e $U 1905  ]
 "5415
-[e :U 1941 ]
+[e :U 1904 ]
 [; ;miwi_pro.c: 5415: else
 [; ;miwi_pro.c: 5416: {
 "5416
@@ -18564,7 +18164,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _MiWiPROFrameControl -> -> 2 `i `uc ]
 "5419
 }
-[e :U 1942 ]
+[e :U 1905 ]
 [; ;miwi_pro.c: 5419: }
 [; ;miwi_pro.c: 5421: TxBuffer[0] = defaultHops;
 "5421
@@ -18601,7 +18201,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U _TxBuffer * -> -> -> 10 `i `ui `ux -> -> # *U &U _TxBuffer `ui `ux ++ _MiWiPROSeqNum -> -> 1 `i `uc ]
 [; ;miwi_pro.c: 5434: if( 0 == RouteMessage(ConnectionTable[ConnectionIndex].PANID, ConnectionTable[ConnectionIndex].AltAddress, SecEn) )
 "5434
-[e $ ! == -> 0 `i -> ( _RouteMessage (3 , , . *U + &U _ConnectionTable * -> _ConnectionIndex `ux -> -> # *U &U _ConnectionTable `ui `ux 0 . *U + &U _ConnectionTable * -> _ConnectionIndex `ux -> -> # *U &U _ConnectionTable `ui `ux 1 -> _SecEn `E8144 `i 1943  ]
+[e $ ! == -> 0 `i -> ( _RouteMessage (3 , , . *U + &U _ConnectionTable * -> _ConnectionIndex `ux -> -> # *U &U _ConnectionTable `ui `ux 0 . *U + &U _ConnectionTable * -> _ConnectionIndex `ux -> -> # *U &U _ConnectionTable `ui `ux 1 -> _SecEn `E8144 `i 1906  ]
 [; ;miwi_pro.c: 5435: {
 "5435
 {
@@ -18611,17 +18211,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 5437: return 0;
 "5437
 [e ) -> -> 0 `i `uc ]
-[e $UE 1939  ]
+[e $UE 1902  ]
 "5438
 }
 [; ;miwi_pro.c: 5438: }
-[e $U 1944  ]
+[e $U 1907  ]
 "5439
-[e :U 1943 ]
+[e :U 1906 ]
 [; ;miwi_pro.c: 5439: else if( MiWiPROStateMachine.bits.MiWiPROAckInProgress &&
 [; ;miwi_pro.c: 5440: (ConnectionTable[ConnectionIndex].AltAddress.v[0] < 0x80))
 "5440
-[e $ ! && != -> . . _MiWiPROStateMachine 1 3 `i -> -> -> 0 `i `uc `i < -> *U + &U . . *U + &U _ConnectionTable * -> _ConnectionIndex `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ConnectionTable * -> _ConnectionIndex `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 `ui `ux `i -> 128 `i 1945  ]
+[e $ ! && != -> . . _MiWiPROStateMachine 1 3 `i -> -> -> 0 `i `uc `i < -> *U + &U . . *U + &U _ConnectionTable * -> _ConnectionIndex `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . *U + &U _ConnectionTable * -> _ConnectionIndex `ux -> -> # *U &U _ConnectionTable `ui `ux 1 0 `ui `ux `i -> 128 `i 1908  ]
 [; ;miwi_pro.c: 5441: {
 "5441
 {
@@ -18634,13 +18234,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _t1 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 5444: while(1)
 "5444
-[e :U 1947 ]
+[e :U 1910 ]
 [; ;miwi_pro.c: 5445: {
 "5445
 {
 [; ;miwi_pro.c: 5446: if( MiApp_MessageAvailable())
 "5446
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1949  ]
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1912  ]
 [; ;miwi_pro.c: 5447: {
 "5447
 {
@@ -18649,28 +18249,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _MiApp_DiscardMessage ..  ]
 "5449
 }
-[e :U 1949 ]
+[e :U 1912 ]
 [; ;miwi_pro.c: 5449: }
 [; ;miwi_pro.c: 5451: if( MiWiPROStateMachine.bits.MiWiPROAckInProgress == 0 )
 "5451
-[e $ ! == -> . . _MiWiPROStateMachine 1 3 `i -> 0 `i 1950  ]
+[e $ ! == -> . . _MiWiPROStateMachine 1 3 `i -> 0 `i 1913  ]
 [; ;miwi_pro.c: 5452: {
 "5452
 {
 [; ;miwi_pro.c: 5453: return 1;
 "5453
 [e ) -> -> 1 `i `uc ]
-[e $UE 1939  ]
+[e $UE 1902  ]
 "5454
 }
-[e :U 1950 ]
+[e :U 1913 ]
 [; ;miwi_pro.c: 5454: }
 [; ;miwi_pro.c: 5455: t2 = MiWi_TickGet();
 "5455
 [e = _t2 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 5456: if( (t2.Val - t1.Val) > (((uint32_t)(16000000)/32)) )
 "5456
-[e $ ! > - . _t2 0 . _t1 0 / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul 1951  ]
+[e $ ! > - . _t2 0 . _t1 0 / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul 1914  ]
 [; ;miwi_pro.c: 5457: {
 "5457
 {
@@ -18680,30 +18280,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 5459: return 0;
 "5459
 [e ) -> -> 0 `i `uc ]
-[e $UE 1939  ]
+[e $UE 1902  ]
 "5460
 }
-[e :U 1951 ]
+[e :U 1914 ]
 "5461
 }
-[e :U 1946 ]
+[e :U 1909 ]
 "5444
-[e $U 1947  ]
-[e :U 1948 ]
+[e $U 1910  ]
+[e :U 1911 ]
 "5462
 }
-[e :U 1945 ]
+[e :U 1908 ]
 "5463
-[e :U 1944 ]
+[e :U 1907 ]
 [; ;miwi_pro.c: 5460: }
 [; ;miwi_pro.c: 5461: }
 [; ;miwi_pro.c: 5462: }
 [; ;miwi_pro.c: 5463: return 1;
 [e ) -> -> 1 `i `uc ]
-[e $UE 1939  ]
+[e $UE 1902  ]
 [; ;miwi_pro.c: 5522: }
 "5522
-[e :UE 1939 ]
+[e :UE 1902 ]
 }
 "5527
 [v _UnicastShortAddress `(E8144 ~T0 @X0 1 ef1`*uc ]
@@ -18760,25 +18360,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U . _tempShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _tempShortAddress 0 `ui `ux *U + _DestAddress * -> -> 1 `i `x -> -> # *U _DestAddress `i `x ]
 [; ;miwi_pro.c: 5546: if( 0 == RouteMessage(myPANID, tempShortAddress, 0) )
 "5546
-[e $ ! == -> 0 `i -> ( _RouteMessage (3 , , _myPANID _tempShortAddress -> -> 0 `i `E8144 `i 1953  ]
+[e $ ! == -> 0 `i -> ( _RouteMessage (3 , , _myPANID _tempShortAddress -> -> 0 `i `E8144 `i 1916  ]
 [; ;miwi_pro.c: 5547: {
 "5547
 {
 [; ;miwi_pro.c: 5548: return 0;
 "5548
 [e ) -> -> 0 `i `E8144 ]
-[e $UE 1952  ]
+[e $UE 1915  ]
 "5549
 }
-[e :U 1953 ]
+[e :U 1916 ]
 [; ;miwi_pro.c: 5549: }
 [; ;miwi_pro.c: 5550: return 1;
 "5550
 [e ) -> -> 1 `i `E8144 ]
-[e $UE 1952  ]
+[e $UE 1915  ]
 [; ;miwi_pro.c: 5582: }
 "5582
-[e :UE 1952 ]
+[e :UE 1915 ]
 }
 "5591
 [v _MiApp_UnicastAddress `(uc ~T0 @X0 1 ef3`*uc`uc`uc ]
@@ -18804,7 +18404,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 5595: uint8_t MiWiPROFrameControl;
 [; ;miwi_pro.c: 5597: if(PermanentAddr == 0)
 "5597
-[e $ ! == -> _PermanentAddr `i -> 0 `i 1955  ]
+[e $ ! == -> _PermanentAddr `i -> 0 `i 1918  ]
 [; ;miwi_pro.c: 5598: {
 "5598
 {
@@ -18816,67 +18416,67 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U . _tempShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _tempShortAddress 0 `ui `ux *U + _DestAddress * -> -> 1 `i `x -> -> # *U _DestAddress `i `x ]
 [; ;miwi_pro.c: 5601: if( tempShortAddress.Val > 0xFFFC )
 "5601
-[e $ ! > . _tempShortAddress 1 -> 65532 `ui 1956  ]
+[e $ ! > . _tempShortAddress 1 -> 65532 `ui 1919  ]
 [; ;miwi_pro.c: 5602: {
 "5602
 {
 [; ;miwi_pro.c: 5603: switch(tempShortAddress.Val)
 "5603
-[e $U 1958  ]
+[e $U 1921  ]
 [; ;miwi_pro.c: 5604: {
 "5604
 {
 [; ;miwi_pro.c: 5605: case 0xFFFF:
 "5605
-[e :U 1959 ]
+[e :U 1922 ]
 [; ;miwi_pro.c: 5606: return MultiCast(0x01, SecEn);
 "5606
 [e ) -> ( _MultiCast (2 , -> -> 1 `i `uc -> _SecEn `E8144 `uc ]
-[e $UE 1954  ]
+[e $UE 1917  ]
 [; ;miwi_pro.c: 5608: case 0xFFFE:
 "5608
-[e :U 1960 ]
+[e :U 1923 ]
 [; ;miwi_pro.c: 5609: return MultiCast(0x03, SecEn);
 "5609
 [e ) -> ( _MultiCast (2 , -> -> 3 `i `uc -> _SecEn `E8144 `uc ]
-[e $UE 1954  ]
+[e $UE 1917  ]
 [; ;miwi_pro.c: 5611: case 0xFFFD:
 "5611
-[e :U 1961 ]
+[e :U 1924 ]
 [; ;miwi_pro.c: 5612: return MultiCast(0x02, SecEn);
 "5612
 [e ) -> ( _MultiCast (2 , -> -> 2 `i `uc -> _SecEn `E8144 `uc ]
-[e $UE 1954  ]
+[e $UE 1917  ]
 [; ;miwi_pro.c: 5614: default:
 "5614
-[e :U 1962 ]
+[e :U 1925 ]
 [; ;miwi_pro.c: 5615: return 0;
 "5615
 [e ) -> -> 0 `i `uc ]
-[e $UE 1954  ]
+[e $UE 1917  ]
 "5616
 }
 [; ;miwi_pro.c: 5616: }
-[e $U 1957  ]
+[e $U 1920  ]
 "5603
-[e :U 1958 ]
-[e [\ . _tempShortAddress 1 , $ -> 65535 `ui 1959
- , $ -> 65534 `ui 1960
- , $ -> 65533 `ui 1961
- 1962 ]
+[e :U 1921 ]
+[e [\ . _tempShortAddress 1 , $ -> 65535 `ui 1922
+ , $ -> 65534 `ui 1923
+ , $ -> 65533 `ui 1924
+ 1925 ]
 "5616
-[e :U 1957 ]
+[e :U 1920 ]
 "5617
 }
-[e :U 1956 ]
+[e :U 1919 ]
 "5618
 }
-[e :U 1955 ]
+[e :U 1918 ]
 [; ;miwi_pro.c: 5617: }
 [; ;miwi_pro.c: 5618: }
 [; ;miwi_pro.c: 5621: if( MiWiPROAckRequired && TxBuffer[11])
 "5621
-[e $ ! && != -> _MiWiPROAckRequired `i -> -> -> 0 `i `E8144 `i != -> *U + &U _TxBuffer * -> -> -> 11 `i `ui `ux -> -> # *U &U _TxBuffer `ui `ux `i -> -> -> 0 `i `uc `i 1963  ]
+[e $ ! && != -> _MiWiPROAckRequired `i -> -> -> 0 `i `E8144 `i != -> *U + &U _TxBuffer * -> -> -> 11 `i `ui `ux -> -> # *U &U _TxBuffer `ui `ux `i -> -> -> 0 `i `uc `i 1926  ]
 [; ;miwi_pro.c: 5622: {
 "5622
 {
@@ -18892,9 +18492,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "5626
 }
 [; ;miwi_pro.c: 5626: }
-[e $U 1964  ]
+[e $U 1927  ]
 "5627
-[e :U 1963 ]
+[e :U 1926 ]
 [; ;miwi_pro.c: 5627: else
 [; ;miwi_pro.c: 5628: {
 "5628
@@ -18907,11 +18507,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _MiWiPROFrameControl -> -> 2 `i `uc ]
 "5631
 }
-[e :U 1964 ]
+[e :U 1927 ]
 [; ;miwi_pro.c: 5631: }
 [; ;miwi_pro.c: 5633: if( PermanentAddr )
 "5633
-[e $ ! != -> _PermanentAddr `i -> -> -> 0 `i `uc `i 1965  ]
+[e $ ! != -> _PermanentAddr `i -> -> -> 0 `i `uc `i 1928  ]
 [; ;miwi_pro.c: 5634: {
 "5634
 {
@@ -18919,10 +18519,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "5635
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1966  ]
-[e $U 1967  ]
+[e $ < -> _i `i -> 8 `i 1929  ]
+[e $U 1930  ]
 "5636
-[e :U 1966 ]
+[e :U 1929 ]
 [; ;miwi_pro.c: 5636: {
 {
 [; ;miwi_pro.c: 5637: tempLongAddress[i] = DestAddress[i];
@@ -18932,20 +18532,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "5635
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1966  ]
-[e :U 1967 ]
+[e $ < -> _i `i -> 8 `i 1929  ]
+[e :U 1930 ]
 "5638
 }
 [; ;miwi_pro.c: 5638: }
 [; ;miwi_pro.c: 5639: if( (handle = SearchForLongAddress()) == 0xFF )
 "5639
-[e $ ! == -> = _handle ( _SearchForLongAddress ..  `i -> 255 `i 1969  ]
+[e $ ! == -> = _handle ( _SearchForLongAddress ..  `i -> 255 `i 1932  ]
 [; ;miwi_pro.c: 5640: {
 "5640
 {
 [; ;miwi_pro.c: 5641: DIRECT_LONG_ADDRESS:
 "5641
-[e :U 1970 ]
+[e :U 1933 ]
 [; ;miwi_pro.c: 5643: TxBuffer[0] = defaultHops;
 "5643
 [e = *U + &U _TxBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _TxBuffer `ui `ux _defaultHops ]
@@ -19006,33 +18606,33 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 5677: return MiMAC_SendPacket(MTP, TxBuffer, TxData);
 "5677
 [e ) ( _MiMAC_SendPacket (3 , , _MTP &U _TxBuffer _TxData ]
-[e $UE 1954  ]
+[e $UE 1917  ]
 "5678
 }
 [; ;miwi_pro.c: 5678: }
-[e $U 1971  ]
+[e $U 1934  ]
 "5679
-[e :U 1969 ]
+[e :U 1932 ]
 [; ;miwi_pro.c: 5679: else
 [; ;miwi_pro.c: 5680: {
 "5680
 {
 [; ;miwi_pro.c: 5681: if( ConnectionTable[handle].status.bits.shortAddressValid == 0 )
 "5681
-[e $ ! == -> . . . *U + &U _ConnectionTable * -> _handle `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 3 `i -> 0 `i 1972  ]
+[e $ ! == -> . . . *U + &U _ConnectionTable * -> _handle `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 3 `i -> 0 `i 1935  ]
 [; ;miwi_pro.c: 5682: {
 "5682
 {
 [; ;miwi_pro.c: 5683: goto DIRECT_LONG_ADDRESS;
 "5683
-[e $U 1970  ]
+[e $U 1933  ]
 "5684
 }
-[e :U 1972 ]
+[e :U 1935 ]
 [; ;miwi_pro.c: 5684: }
 [; ;miwi_pro.c: 5686: if( MiWiPROAckRequired )
 "5686
-[e $ ! != -> _MiWiPROAckRequired `i -> -> -> 0 `i `E8144 `i 1973  ]
+[e $ ! != -> _MiWiPROAckRequired `i -> -> -> 0 `i `E8144 `i 1936  ]
 [; ;miwi_pro.c: 5687: {
 "5687
 {
@@ -19041,7 +18641,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . _AcknowledgementAddr 1 . . *U + &U _ConnectionTable * -> _handle `ux -> -> # *U &U _ConnectionTable `ui `ux 1 1 ]
 "5689
 }
-[e :U 1973 ]
+[e :U 1936 ]
 [; ;miwi_pro.c: 5689: }
 [; ;miwi_pro.c: 5691: TxBuffer[0] = defaultHops;
 "5691
@@ -19078,7 +18678,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U _TxBuffer * -> -> -> 10 `i `ui `ux -> -> # *U &U _TxBuffer `ui `ux ++ _MiWiPROSeqNum -> -> 1 `i `uc ]
 [; ;miwi_pro.c: 5703: if( 0 == RouteMessage(ConnectionTable[handle].PANID, ConnectionTable[handle].AltAddress, SecEn) )
 "5703
-[e $ ! == -> 0 `i -> ( _RouteMessage (3 , , . *U + &U _ConnectionTable * -> _handle `ux -> -> # *U &U _ConnectionTable `ui `ux 0 . *U + &U _ConnectionTable * -> _handle `ux -> -> # *U &U _ConnectionTable `ui `ux 1 -> _SecEn `E8144 `i 1974  ]
+[e $ ! == -> 0 `i -> ( _RouteMessage (3 , , . *U + &U _ConnectionTable * -> _handle `ux -> -> # *U &U _ConnectionTable `ui `ux 0 . *U + &U _ConnectionTable * -> _handle `ux -> -> # *U &U _ConnectionTable `ui `ux 1 -> _SecEn `E8144 `i 1937  ]
 [; ;miwi_pro.c: 5704: {
 "5704
 {
@@ -19088,14 +18688,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 5706: return 0;
 "5706
 [e ) -> -> 0 `i `uc ]
-[e $UE 1954  ]
+[e $UE 1917  ]
 "5707
 }
-[e :U 1974 ]
+[e :U 1937 ]
 [; ;miwi_pro.c: 5707: }
 [; ;miwi_pro.c: 5709: if( MiWiPROStateMachine.bits.MiWiPROAckInProgress )
 "5709
-[e $ ! != -> . . _MiWiPROStateMachine 1 3 `i -> -> -> 0 `i `uc `i 1975  ]
+[e $ ! != -> . . _MiWiPROStateMachine 1 3 `i -> -> -> 0 `i `uc `i 1938  ]
 [; ;miwi_pro.c: 5710: {
 "5710
 {
@@ -19108,13 +18708,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _t1 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 5713: while(1)
 "5713
-[e :U 1977 ]
+[e :U 1940 ]
 [; ;miwi_pro.c: 5714: {
 "5714
 {
 [; ;miwi_pro.c: 5715: if( MiApp_MessageAvailable())
 "5715
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1979  ]
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1942  ]
 [; ;miwi_pro.c: 5716: {
 "5716
 {
@@ -19123,28 +18723,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _MiApp_DiscardMessage ..  ]
 "5718
 }
-[e :U 1979 ]
+[e :U 1942 ]
 [; ;miwi_pro.c: 5718: }
 [; ;miwi_pro.c: 5720: if( MiWiPROStateMachine.bits.MiWiPROAckInProgress == 0 )
 "5720
-[e $ ! == -> . . _MiWiPROStateMachine 1 3 `i -> 0 `i 1980  ]
+[e $ ! == -> . . _MiWiPROStateMachine 1 3 `i -> 0 `i 1943  ]
 [; ;miwi_pro.c: 5721: {
 "5721
 {
 [; ;miwi_pro.c: 5722: return 1;
 "5722
 [e ) -> -> 1 `i `uc ]
-[e $UE 1954  ]
+[e $UE 1917  ]
 "5723
 }
-[e :U 1980 ]
+[e :U 1943 ]
 [; ;miwi_pro.c: 5723: }
 [; ;miwi_pro.c: 5724: t2 = MiWi_TickGet();
 "5724
 [e = _t2 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 5725: if( (t2.Val - t1.Val) > (((uint32_t)(16000000)/32)) )
 "5725
-[e $ ! > - . _t2 0 . _t1 0 / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul 1981  ]
+[e $ ! > - . _t2 0 . _t1 0 / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul 1944  ]
 [; ;miwi_pro.c: 5726: {
 "5726
 {
@@ -19154,32 +18754,32 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 5728: return 0;
 "5728
 [e ) -> -> 0 `i `uc ]
-[e $UE 1954  ]
+[e $UE 1917  ]
 "5729
 }
-[e :U 1981 ]
+[e :U 1944 ]
 "5730
 }
-[e :U 1976 ]
+[e :U 1939 ]
 "5713
-[e $U 1977  ]
-[e :U 1978 ]
+[e $U 1940  ]
+[e :U 1941 ]
 "5731
 }
-[e :U 1975 ]
+[e :U 1938 ]
 [; ;miwi_pro.c: 5729: }
 [; ;miwi_pro.c: 5730: }
 [; ;miwi_pro.c: 5731: }
 [; ;miwi_pro.c: 5732: return 1;
 "5732
 [e ) -> -> 1 `i `uc ]
-[e $UE 1954  ]
+[e $UE 1917  ]
 "5792
 }
-[e :U 1971 ]
+[e :U 1934 ]
 "5793
 }
-[e :U 1965 ]
+[e :U 1928 ]
 [; ;miwi_pro.c: 5792: }
 [; ;miwi_pro.c: 5793: }
 [; ;miwi_pro.c: 5795: TxBuffer[0] = defaultHops;
@@ -19229,7 +18829,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U . _tempShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _tempShortAddress 0 `ui `ux *U + _DestAddress * -> -> 1 `i `x -> -> # *U _DestAddress `i `x ]
 [; ;miwi_pro.c: 5813: if( 0 == RouteMessage(myPANID, tempShortAddress, SecEn) )
 "5813
-[e $ ! == -> 0 `i -> ( _RouteMessage (3 , , _myPANID _tempShortAddress -> _SecEn `E8144 `i 1982  ]
+[e $ ! == -> 0 `i -> ( _RouteMessage (3 , , _myPANID _tempShortAddress -> _SecEn `E8144 `i 1945  ]
 [; ;miwi_pro.c: 5814: {
 "5814
 {
@@ -19239,17 +18839,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 5816: return 0;
 "5816
 [e ) -> -> 0 `i `uc ]
-[e $UE 1954  ]
+[e $UE 1917  ]
 "5817
 }
 [; ;miwi_pro.c: 5817: }
-[e $U 1983  ]
+[e $U 1946  ]
 "5818
-[e :U 1982 ]
+[e :U 1945 ]
 [; ;miwi_pro.c: 5818: else if( MiWiPROStateMachine.bits.MiWiPROAckInProgress &&
 [; ;miwi_pro.c: 5819: (DestAddress[0] < 0x80) )
 "5819
-[e $ ! && != -> . . _MiWiPROStateMachine 1 3 `i -> -> -> 0 `i `uc `i < -> *U + _DestAddress * -> -> 0 `i `x -> -> # *U _DestAddress `i `x `i -> 128 `i 1984  ]
+[e $ ! && != -> . . _MiWiPROStateMachine 1 3 `i -> -> -> 0 `i `uc `i < -> *U + _DestAddress * -> -> 0 `i `x -> -> # *U _DestAddress `i `x `i -> 128 `i 1947  ]
 [; ;miwi_pro.c: 5820: {
 "5820
 {
@@ -19262,13 +18862,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _t1 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 5824: while(1)
 "5824
-[e :U 1986 ]
+[e :U 1949 ]
 [; ;miwi_pro.c: 5825: {
 "5825
 {
 [; ;miwi_pro.c: 5826: if( MiApp_MessageAvailable())
 "5826
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1988  ]
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1951  ]
 [; ;miwi_pro.c: 5827: {
 "5827
 {
@@ -19277,28 +18877,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _MiApp_DiscardMessage ..  ]
 "5829
 }
-[e :U 1988 ]
+[e :U 1951 ]
 [; ;miwi_pro.c: 5829: }
 [; ;miwi_pro.c: 5831: if( MiWiPROStateMachine.bits.MiWiPROAckInProgress == 0 )
 "5831
-[e $ ! == -> . . _MiWiPROStateMachine 1 3 `i -> 0 `i 1989  ]
+[e $ ! == -> . . _MiWiPROStateMachine 1 3 `i -> 0 `i 1952  ]
 [; ;miwi_pro.c: 5832: {
 "5832
 {
 [; ;miwi_pro.c: 5833: return 1;
 "5833
 [e ) -> -> 1 `i `uc ]
-[e $UE 1954  ]
+[e $UE 1917  ]
 "5834
 }
-[e :U 1989 ]
+[e :U 1952 ]
 [; ;miwi_pro.c: 5834: }
 [; ;miwi_pro.c: 5835: t2 = MiWi_TickGet();
 "5835
 [e = _t2 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 5836: if( (t2.Val - t1.Val) > (((uint32_t)(16000000)/32)) )
 "5836
-[e $ ! > - . _t2 0 . _t1 0 / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul 1990  ]
+[e $ ! > - . _t2 0 . _t1 0 / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul 1953  ]
 [; ;miwi_pro.c: 5837: {
 "5837
 {
@@ -19308,30 +18908,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 5839: return 0;
 "5839
 [e ) -> -> 0 `i `uc ]
-[e $UE 1954  ]
+[e $UE 1917  ]
 "5840
 }
-[e :U 1990 ]
+[e :U 1953 ]
 "5841
 }
-[e :U 1985 ]
+[e :U 1948 ]
 "5824
-[e $U 1986  ]
-[e :U 1987 ]
+[e $U 1949  ]
+[e :U 1950 ]
 "5842
 }
-[e :U 1984 ]
+[e :U 1947 ]
 "5843
-[e :U 1983 ]
+[e :U 1946 ]
 [; ;miwi_pro.c: 5840: }
 [; ;miwi_pro.c: 5841: }
 [; ;miwi_pro.c: 5842: }
 [; ;miwi_pro.c: 5843: return 1;
 [e ) -> -> 1 `i `uc ]
-[e $UE 1954  ]
+[e $UE 1917  ]
 [; ;miwi_pro.c: 5903: }
 "5903
-[e :UE 1954 ]
+[e :UE 1917 ]
 }
 "5907
 [v _MiApp_StartConnection `(uc ~T0 @X0 1 ef3`uc`uc`ul ]
@@ -19348,13 +18948,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;miwi_pro.c: 5909: switch(Mode)
 "5909
-[e $U 1993  ]
+[e $U 1956  ]
 [; ;miwi_pro.c: 5910: {
 "5910
 {
 [; ;miwi_pro.c: 5912: case 0x00:
 "5912
-[e :U 1994 ]
+[e :U 1957 ]
 [; ;miwi_pro.c: 5913: myShortAddress.Val = 0;
 "5913
 [e = . _myShortAddress 1 -> -> 0 `i `ui ]
@@ -19409,10 +19009,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 5939: return 1;
 "5939
 [e ) -> -> 1 `i `uc ]
-[e $UE 1991  ]
+[e $UE 1954  ]
 [; ;miwi_pro.c: 5942: case 0x01:
 "5942
-[e :U 1995 ]
+[e :U 1958 ]
 [; ;miwi_pro.c: 5944: {
 "5944
 {
@@ -19485,42 +19085,42 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 5980: return 1;
 "5980
 [e ) -> -> 1 `i `uc ]
-[e $UE 1991  ]
+[e $UE 1954  ]
 "5981
 }
 [; ;miwi_pro.c: 5981: }
 [; ;miwi_pro.c: 5986: case 0x02:
 "5986
-[e :U 1996 ]
+[e :U 1959 ]
 [; ;miwi_pro.c: 5988: return 0;
 "5988
 [e ) -> -> 0 `i `uc ]
-[e $UE 1991  ]
+[e $UE 1954  ]
 [; ;miwi_pro.c: 5990: default:
 "5990
-[e :U 1997 ]
+[e :U 1960 ]
 [; ;miwi_pro.c: 5991: break;
 "5991
-[e $U 1992  ]
+[e $U 1955  ]
 "5992
 }
 [; ;miwi_pro.c: 5992: }
-[e $U 1992  ]
+[e $U 1955  ]
 "5909
-[e :U 1993 ]
-[e [\ _Mode , $ -> -> 0 `i `uc 1994
- , $ -> -> 1 `i `uc 1995
- , $ -> -> 2 `i `uc 1996
- 1997 ]
+[e :U 1956 ]
+[e [\ _Mode , $ -> -> 0 `i `uc 1957
+ , $ -> -> 1 `i `uc 1958
+ , $ -> -> 2 `i `uc 1959
+ 1960 ]
 "5992
-[e :U 1992 ]
+[e :U 1955 ]
 [; ;miwi_pro.c: 5993: return 0;
 "5993
 [e ) -> -> 0 `i `uc ]
-[e $UE 1991  ]
+[e $UE 1954  ]
 [; ;miwi_pro.c: 5994: }
 "5994
-[e :UE 1991 ]
+[e :UE 1954 ]
 }
 "6043
 [v _MiApp_NoiseDetection `(uc ~T0 @X0 1 ef4`ul`uc`uc`*uc ]
@@ -19557,17 +19157,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 6049: MIWI_TICK t1, t2;
 [; ;miwi_pro.c: 6051: if( DetectionMode != 0x00 )
 "6051
-[e $ ! != -> _DetectionMode `i -> 0 `i 1999  ]
+[e $ ! != -> _DetectionMode `i -> 0 `i 1962  ]
 [; ;miwi_pro.c: 6052: {
 "6052
 {
 [; ;miwi_pro.c: 6053: return 0xFF;
 "6053
 [e ) -> -> 255 `i `uc ]
-[e $UE 1998  ]
+[e $UE 1961  ]
 "6054
 }
-[e :U 1999 ]
+[e :U 1962 ]
 [; ;miwi_pro.c: 6054: }
 [; ;miwi_pro.c: 6057: ;
 [; ;miwi_pro.c: 6058: i = 0;
@@ -19575,8 +19175,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _i -> -> 0 `i `uc ]
 [; ;miwi_pro.c: 6059: while( i < 32 )
 "6059
-[e $U 2000  ]
-[e :U 2001 ]
+[e $U 1963  ]
+[e :U 1964 ]
 [; ;miwi_pro.c: 6060: {
 "6060
 {
@@ -19585,7 +19185,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U _EnergyScanResults * -> _i `ux -> -> # *U &U _EnergyScanResults `ui `ux -> -> 255 `i `uc ]
 [; ;miwi_pro.c: 6064: if( ChannelMap & 0x07FFF800 & (channelMask << i) )
 "6064
-[e $ ! != & & _ChannelMap -> -> 134215680 `l `ul << _channelMask _i -> -> 0 `i `ul 2003  ]
+[e $ ! != & & _ChannelMap -> -> 134215680 `l `ul << _channelMask _i -> -> 0 `i `ul 1966  ]
 [; ;miwi_pro.c: 6065: {
 "6065
 {
@@ -19608,7 +19208,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _t2 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 6075: while(1)
 "6075
-[e :U 2005 ]
+[e :U 1968 ]
 [; ;miwi_pro.c: 6076: {
 "6076
 {
@@ -19617,7 +19217,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _RSSIcheck ( _MiMAC_ChannelAssessment (1 -> -> 1 `i `uc ]
 [; ;miwi_pro.c: 6078: if( RSSIcheck > maxRSSI )
 "6078
-[e $ ! > -> _RSSIcheck `i -> _maxRSSI `i 2007  ]
+[e $ ! > -> _RSSIcheck `i -> _maxRSSI `i 1970  ]
 [; ;miwi_pro.c: 6079: {
 "6079
 {
@@ -19626,29 +19226,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _maxRSSI _RSSIcheck ]
 "6081
 }
-[e :U 2007 ]
+[e :U 1970 ]
 [; ;miwi_pro.c: 6081: }
 [; ;miwi_pro.c: 6083: t1 = MiWi_TickGet();
 "6083
 [e = _t1 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 6084: if( (t1.Val - t2.Val) > ((uint32_t)(ScanTime[ScanDuration])) )
 "6084
-[e $ ! > - . _t1 0 . _t2 0 *U + &U _ScanTime * -> _ScanDuration `ux -> -> # *U &U _ScanTime `ui `ux 2008  ]
+[e $ ! > - . _t1 0 . _t2 0 *U + &U _ScanTime * -> _ScanDuration `ux -> -> # *U &U _ScanTime `ui `ux 1971  ]
 [; ;miwi_pro.c: 6085: {
 "6085
 {
 [; ;miwi_pro.c: 6087: break;
 "6087
-[e $U 2006  ]
+[e $U 1969  ]
 "6088
 }
-[e :U 2008 ]
+[e :U 1971 ]
 "6089
 }
-[e :U 2004 ]
+[e :U 1967 ]
 "6075
-[e $U 2005  ]
-[e :U 2006 ]
+[e $U 1968  ]
+[e :U 1969 ]
 [; ;miwi_pro.c: 6088: }
 [; ;miwi_pro.c: 6089: }
 [; ;miwi_pro.c: 6091: ;
@@ -19661,9 +19261,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "6095
 {
 [e = _k -> -> 0 `i `uc ]
-[e $U 2012  ]
+[e $U 1975  ]
 "6096
-[e :U 2009 ]
+[e :U 1972 ]
 [; ;miwi_pro.c: 6096: {
 {
 [; ;miwi_pro.c: 6097: ;
@@ -19671,9 +19271,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "6095
 [e ++ _k -> -> 1 `i `uc ]
-[e :U 2012 ]
-[e $ < -> _k `i -> _j `i 2009  ]
-[e :U 2010 ]
+[e :U 1975 ]
+[e $ < -> _k `i -> _j `i 1972  ]
+[e :U 1973 ]
 "6098
 }
 [; ;miwi_pro.c: 6098: }
@@ -19684,7 +19284,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U _EnergyScanResults * -> _i `ux -> -> # *U &U _EnergyScanResults `ui `ux _maxRSSI ]
 [; ;miwi_pro.c: 6106: if( maxRSSI < minRSSI )
 "6106
-[e $ ! < -> _maxRSSI `i -> _minRSSI `i 2013  ]
+[e $ ! < -> _maxRSSI `i -> _minRSSI `i 1976  ]
 [; ;miwi_pro.c: 6107: {
 "6107
 {
@@ -19696,7 +19296,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _OptimalChannel _i ]
 [; ;miwi_pro.c: 6110: if( RSSIValue )
 "6110
-[e $ ! != _RSSIValue -> -> 0 `i `*uc 2014  ]
+[e $ ! != _RSSIValue -> -> 0 `i `*uc 1977  ]
 [; ;miwi_pro.c: 6111: {
 "6111
 {
@@ -19705,13 +19305,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U _RSSIValue _minRSSI ]
 "6113
 }
-[e :U 2014 ]
+[e :U 1977 ]
 "6114
 }
-[e :U 2013 ]
+[e :U 1976 ]
 "6115
 }
-[e :U 2003 ]
+[e :U 1966 ]
 [; ;miwi_pro.c: 6113: }
 [; ;miwi_pro.c: 6114: }
 [; ;miwi_pro.c: 6115: }
@@ -19720,18 +19320,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ++ _i -> -> 1 `i `uc ]
 "6117
 }
-[e :U 2000 ]
+[e :U 1963 ]
 "6059
-[e $ < -> _i `i -> 32 `i 2001  ]
-[e :U 2002 ]
+[e $ < -> _i `i -> 32 `i 1964  ]
+[e :U 1965 ]
 [; ;miwi_pro.c: 6117: }
 [; ;miwi_pro.c: 6119: return OptimalChannel;
 "6119
 [e ) _OptimalChannel ]
-[e $UE 1998  ]
+[e $UE 1961  ]
 [; ;miwi_pro.c: 6120: }
 "6120
-[e :UE 1998 ]
+[e :UE 1961 ]
 }
 "6166
 [v _MiApp_ResyncConnection `(uc ~T0 @X0 1 ef2`uc`ul ]
@@ -19769,10 +19369,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "6175
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 3 `i 2016  ]
-[e $U 2017  ]
+[e $ < -> _i `i -> 3 `i 1979  ]
+[e $U 1980  ]
 "6176
-[e :U 2016 ]
+[e :U 1979 ]
 [; ;miwi_pro.c: 6176: {
 {
 "6177
@@ -19784,8 +19384,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _j -> -> 0 `i `uc ]
 [; ;miwi_pro.c: 6180: while(MiWiPROStateMachine.bits.Resynning)
 "6180
-[e $U 2019  ]
-[e :U 2020 ]
+[e $U 1982  ]
+[e :U 1983 ]
 [; ;miwi_pro.c: 6181: {
 "6181
 {
@@ -19794,7 +19394,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _t2 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 6184: if( (t2.Val - t1.Val) > ((uint32_t)(16000000)/1000*(30780))/(uint32_t)2000 )
 "6184
-[e $ ! > - . _t2 0 . _t1 0 / * / -> -> 16000000 `l `ul -> -> -> 1000 `i `l `ul -> -> -> 30780 `i `l `ul -> -> 2000 `i `ul 2022  ]
+[e $ ! > - . _t2 0 . _t1 0 / * / -> -> 16000000 `l `ul -> -> -> 1000 `i `l `ul -> -> -> 30780 `i `l `ul -> -> 2000 `i `ul 1985  ]
 [; ;miwi_pro.c: 6185: {
 "6185
 {
@@ -19803,42 +19403,42 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . _t1 0 . _t2 0 ]
 [; ;miwi_pro.c: 6188: if( j > 31 )
 "6188
-[e $ ! > -> _j `i -> 31 `i 2023  ]
+[e $ ! > -> _j `i -> 31 `i 1986  ]
 [; ;miwi_pro.c: 6189: {
 "6189
 {
 [; ;miwi_pro.c: 6190: break;
 "6190
-[e $U 2021  ]
+[e $U 1984  ]
 "6191
 }
-[e :U 2023 ]
+[e :U 1986 ]
 [; ;miwi_pro.c: 6191: }
 [; ;miwi_pro.c: 6193: while( (ChannelMap & 0x07FFF800 & (ChannelMask << j)) == 0 )
 "6193
-[e $U 2024  ]
-[e :U 2025 ]
+[e $U 1987  ]
+[e :U 1988 ]
 [; ;miwi_pro.c: 6194: {
 "6194
 {
 [; ;miwi_pro.c: 6195: if( ++j > 31 )
 "6195
-[e $ ! > -> =+ _j -> -> 1 `i `uc `i -> 31 `i 2027  ]
+[e $ ! > -> =+ _j -> -> 1 `i `uc `i -> 31 `i 1990  ]
 [; ;miwi_pro.c: 6196: {
 "6196
 {
 [; ;miwi_pro.c: 6197: goto GetOutOfLoop;
 "6197
-[e $U 2028  ]
+[e $U 1991  ]
 "6198
 }
-[e :U 2027 ]
+[e :U 1990 ]
 "6199
 }
-[e :U 2024 ]
+[e :U 1987 ]
 "6193
-[e $ == & & _ChannelMap -> -> 134215680 `l `ul << _ChannelMask _j -> -> -> 0 `i `l `ul 2025  ]
-[e :U 2026 ]
+[e $ == & & _ChannelMap -> -> 134215680 `l `ul << _ChannelMask _j -> -> -> 0 `i `l `ul 1988  ]
+[e :U 1989 ]
 [; ;miwi_pro.c: 6198: }
 [; ;miwi_pro.c: 6199: }
 [; ;miwi_pro.c: 6201: ;
@@ -19868,11 +19468,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _MiApp_UnicastConnection (2 , _ConnectionIndex -> -> 0 `i `uc ]
 "6212
 }
-[e :U 2022 ]
+[e :U 1985 ]
 [; ;miwi_pro.c: 6212: }
 [; ;miwi_pro.c: 6213: if( MiApp_MessageAvailable())
 "6213
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 2029  ]
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1992  ]
 [; ;miwi_pro.c: 6214: {
 "6214
 {
@@ -19881,18 +19481,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _MiApp_DiscardMessage ..  ]
 "6216
 }
-[e :U 2029 ]
+[e :U 1992 ]
 "6218
 }
-[e :U 2019 ]
+[e :U 1982 ]
 "6180
-[e $ != -> . . _MiWiPROStateMachine 1 6 `i -> -> -> 0 `i `uc `i 2020  ]
-[e :U 2021 ]
+[e $ != -> . . _MiWiPROStateMachine 1 6 `i -> -> -> 0 `i `uc `i 1983  ]
+[e :U 1984 ]
 [; ;miwi_pro.c: 6216: }
 [; ;miwi_pro.c: 6218: }
 [; ;miwi_pro.c: 6219: if( MiWiPROStateMachine.bits.Resynning == 0 )
 "6219
-[e $ ! == -> . . _MiWiPROStateMachine 1 6 `i -> 0 `i 2030  ]
+[e $ ! == -> . . _MiWiPROStateMachine 1 6 `i -> 0 `i 1993  ]
 [; ;miwi_pro.c: 6220: {
 "6220
 {
@@ -19902,14 +19502,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 6224: return 1;
 "6224
 [e ) -> -> 1 `i `uc ]
-[e $UE 2015  ]
+[e $UE 1978  ]
 "6225
 }
-[e :U 2030 ]
+[e :U 1993 ]
 [; ;miwi_pro.c: 6225: }
 [; ;miwi_pro.c: 6226: GetOutOfLoop:
 "6226
-[e :U 2028 ]
+[e :U 1991 ]
 [; ;miwi_pro.c: 6227: MacroNop();
 "6227
 [e ( _MacroNop ..  ]
@@ -19917,8 +19517,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "6175
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 3 `i 2016  ]
-[e :U 2017 ]
+[e $ < -> _i `i -> 3 `i 1979  ]
+[e :U 1980 ]
 "6228
 }
 [; ;miwi_pro.c: 6228: }
@@ -19931,10 +19531,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 6232: return 0;
 "6232
 [e ) -> -> 0 `i `uc ]
-[e $UE 2015  ]
+[e $UE 1978  ]
 [; ;miwi_pro.c: 6233: }
 "6233
-[e :UE 2015 ]
+[e :UE 1978 ]
 }
 "6254
 [v _StartChannelHopping `(v ~T0 @X0 1 ef1`uc ]
@@ -19958,10 +19558,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "6259
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 3 `i 2032  ]
-[e $U 2033  ]
+[e $ < -> _i `i -> 3 `i 1995  ]
+[e $U 1996  ]
 "6260
-[e :U 2032 ]
+[e :U 1995 ]
 [; ;miwi_pro.c: 6260: {
 {
 [; ;miwi_pro.c: 6261: t1 = MiWi_TickGet();
@@ -19969,7 +19569,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _t1 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 6262: while(1)
 "6262
-[e :U 2036 ]
+[e :U 1999 ]
 [; ;miwi_pro.c: 6263: {
 "6263
 {
@@ -19978,7 +19578,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _t2 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 6265: if( (t2.Val - t1.Val) > (((uint32_t)(16000000)/32)) )
 "6265
-[e $ ! > - . _t2 0 . _t1 0 / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul 2038  ]
+[e $ ! > - . _t2 0 . _t1 0 / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul 2001  ]
 [; ;miwi_pro.c: 6266: {
 "6266
 {
@@ -20004,22 +19604,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _MultiCast (2 , -> -> 3 `i `uc -> -> 0 `i `E8144 ]
 [; ;miwi_pro.c: 6273: break;
 "6273
-[e $U 2037  ]
+[e $U 2000  ]
 "6274
 }
-[e :U 2038 ]
+[e :U 2001 ]
 "6275
 }
-[e :U 2035 ]
+[e :U 1998 ]
 "6262
-[e $U 2036  ]
-[e :U 2037 ]
+[e $U 1999  ]
+[e :U 2000 ]
 "6276
 }
 "6259
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 3 `i 2032  ]
-[e :U 2033 ]
+[e $ < -> _i `i -> 3 `i 1995  ]
+[e :U 1996 ]
 "6276
 }
 [; ;miwi_pro.c: 6274: }
@@ -20033,7 +19633,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . _FrequencyAgilityInfo 2 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 6279: }
 "6279
-[e :UE 2031 ]
+[e :UE 1994 ]
 }
 "6282
 [v _MiApp_InitChannelHopping `(uc ~T0 @X0 1 ef1`ul ]
@@ -20069,26 +19669,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 6289: MIWI_TICK t1, t2;
 [; ;miwi_pro.c: 6291: if( role != 0x02 )
 "6291
-[e $ ! != -> _role `i -> 2 `i 2040  ]
+[e $ ! != -> _role `i -> 2 `i 2003  ]
 [; ;miwi_pro.c: 6292: {
 "6292
 {
 [; ;miwi_pro.c: 6293: return 0;
 "6293
 [e ) -> -> 0 `i `uc ]
-[e $UE 2039  ]
+[e $UE 2002  ]
 "6294
 }
-[e :U 2040 ]
+[e :U 2003 ]
 [; ;miwi_pro.c: 6294: }
 [; ;miwi_pro.c: 6296: for( i = 0; i < 0x03; i++)
 "6296
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 3 `i 2041  ]
-[e $U 2042  ]
+[e $ < -> _i `i -> 3 `i 2004  ]
+[e $U 2005  ]
 "6297
-[e :U 2041 ]
+[e :U 2004 ]
 [; ;miwi_pro.c: 6297: {
 {
 [; ;miwi_pro.c: 6298: t1 = MiWi_TickGet();
@@ -20096,7 +19696,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _t1 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 6299: while(1)
 "6299
-[e :U 2045 ]
+[e :U 2008 ]
 [; ;miwi_pro.c: 6300: {
 "6300
 {
@@ -20105,7 +19705,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _t2 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 6302: if( (t2.Val - t1.Val) > (((uint32_t)(16000000)/32)) )
 "6302
-[e $ ! > - . _t2 0 . _t1 0 / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul 2047  ]
+[e $ ! > - . _t2 0 . _t1 0 / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul 2010  ]
 [; ;miwi_pro.c: 6303: {
 "6303
 {
@@ -20137,22 +19737,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _MultiCast (2 , -> -> 2 `i `uc -> -> 0 `i `E8144 ]
 [; ;miwi_pro.c: 6312: break;
 "6312
-[e $U 2046  ]
+[e $U 2009  ]
 "6313
 }
-[e :U 2047 ]
+[e :U 2010 ]
 "6314
 }
-[e :U 2044 ]
+[e :U 2007 ]
 "6299
-[e $U 2045  ]
-[e :U 2046 ]
+[e $U 2008  ]
+[e :U 2009 ]
 "6315
 }
 "6296
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 3 `i 2041  ]
-[e :U 2042 ]
+[e $ < -> _i `i -> 3 `i 2004  ]
+[e :U 2005 ]
 "6315
 }
 [; ;miwi_pro.c: 6313: }
@@ -20178,7 +19778,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . _FrequencyAgilityInfo 2 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 6324: while(1)
 "6324
-[e :U 2049 ]
+[e :U 2012 ]
 [; ;miwi_pro.c: 6325: {
 "6325
 {
@@ -20187,20 +19787,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _t1 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 6327: if( (t1.Val - FrequencyAgilityInfo.FA_StatTick.Val) > (((((uint32_t)(16000000)/32)) * 2) * 3) )
 "6327
-[e $ ! > - . _t1 0 . . _FrequencyAgilityInfo 2 0 * * / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul -> -> -> 2 `i `l `ul -> -> -> 3 `i `l `ul 2051  ]
+[e $ ! > - . _t1 0 . . _FrequencyAgilityInfo 2 0 * * / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul -> -> -> 2 `i `l `ul -> -> -> 3 `i `l `ul 2014  ]
 [; ;miwi_pro.c: 6328: {
 "6328
 {
 [; ;miwi_pro.c: 6329: break;
 "6329
-[e $U 2050  ]
+[e $U 2013  ]
 "6330
 }
-[e :U 2051 ]
+[e :U 2014 ]
 [; ;miwi_pro.c: 6330: }
 [; ;miwi_pro.c: 6331: if( MiApp_MessageAvailable())
 "6331
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 2052  ]
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 2015  ]
 [; ;miwi_pro.c: 6332: {
 "6332
 {
@@ -20209,18 +19809,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _MiApp_DiscardMessage ..  ]
 "6334
 }
-[e :U 2052 ]
+[e :U 2015 ]
 "6336
 }
-[e :U 2048 ]
+[e :U 2011 ]
 "6324
-[e $U 2049  ]
-[e :U 2050 ]
+[e $U 2012  ]
+[e :U 2013 ]
 [; ;miwi_pro.c: 6334: }
 [; ;miwi_pro.c: 6336: }
 [; ;miwi_pro.c: 6338: while(1)
 "6338
-[e :U 2054 ]
+[e :U 2017 ]
 [; ;miwi_pro.c: 6339: {
 "6339
 {
@@ -20234,15 +19834,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 "6342
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 32 `i 2056  ]
-[e $U 2057  ]
+[e $ < -> _i `i -> 32 `i 2019  ]
+[e $U 2020  ]
 "6343
-[e :U 2056 ]
+[e :U 2019 ]
 [; ;miwi_pro.c: 6343: {
 {
 [; ;miwi_pro.c: 6344: if( EnergyScanResults[i] < RSSIValue )
 "6344
-[e $ ! < -> *U + &U _EnergyScanResults * -> _i `ux -> -> # *U &U _EnergyScanResults `ui `ux `i -> _RSSIValue `i 2059  ]
+[e $ ! < -> *U + &U _EnergyScanResults * -> _i `ux -> -> # *U &U _EnergyScanResults `ui `ux `i -> _RSSIValue `i 2022  ]
 [; ;miwi_pro.c: 6345: {
 "6345
 {
@@ -20254,20 +19854,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _optimalChannel _i ]
 "6348
 }
-[e :U 2059 ]
+[e :U 2022 ]
 "6349
 }
 "6342
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 32 `i 2056  ]
-[e :U 2057 ]
+[e $ < -> _i `i -> 32 `i 2019  ]
+[e :U 2020 ]
 "6349
 }
 [; ;miwi_pro.c: 6348: }
 [; ;miwi_pro.c: 6349: }
 [; ;miwi_pro.c: 6351: if( (optimalChannel < 0xFF) && (RSSIValue < 0x30) )
 "6351
-[e $ ! && < -> _optimalChannel `i -> 255 `i < -> _RSSIValue `i -> 48 `i 2060  ]
+[e $ ! && < -> _optimalChannel `i -> 255 `i < -> _RSSIValue `i -> 48 `i 2023  ]
 [; ;miwi_pro.c: 6352: {
 "6352
 {
@@ -20277,9 +19877,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "6354
 }
 [; ;miwi_pro.c: 6354: }
-[e $U 2061  ]
+[e $U 2024  ]
 "6355
-[e :U 2060 ]
+[e :U 2023 ]
 [; ;miwi_pro.c: 6355: else
 [; ;miwi_pro.c: 6356: {
 "6356
@@ -20290,10 +19890,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 6358: return 0;
 "6358
 [e ) -> -> 0 `i `uc ]
-[e $UE 2039  ]
+[e $UE 2002  ]
 "6359
 }
-[e :U 2061 ]
+[e :U 2024 ]
 [; ;miwi_pro.c: 6359: }
 [; ;miwi_pro.c: 6362: {TxData = 11;};
 "6362
@@ -20323,7 +19923,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . _FrequencyAgilityInfo 2 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 6371: while(1)
 "6371
-[e :U 2063 ]
+[e :U 2026 ]
 [; ;miwi_pro.c: 6372: {
 "6372
 {
@@ -20332,33 +19932,33 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _t1 ( _MiWi_TickGet ..  ]
 [; ;miwi_pro.c: 6374: if( (t1.Val - FrequencyAgilityInfo.FA_StatTick.Val) > ((((uint32_t)(16000000)/32)) * 2) )
 "6374
-[e $ ! > - . _t1 0 . . _FrequencyAgilityInfo 2 0 * / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul -> -> -> 2 `i `l `ul 2065  ]
+[e $ ! > - . _t1 0 . . _FrequencyAgilityInfo 2 0 * / -> -> 16000000 `l `ul -> -> -> 32 `i `l `ul -> -> -> 2 `i `l `ul 2028  ]
 [; ;miwi_pro.c: 6375: {
 "6375
 {
 [; ;miwi_pro.c: 6376: break;
 "6376
-[e $U 2064  ]
+[e $U 2027  ]
 "6377
 }
-[e :U 2065 ]
+[e :U 2028 ]
 [; ;miwi_pro.c: 6377: }
 [; ;miwi_pro.c: 6378: if( FrequencyAgilityInfo.status.bits.DisputeChannel )
 "6378
-[e $ ! != -> . . . _FrequencyAgilityInfo 0 1 2 `i -> -> -> 0 `i `uc `i 2066  ]
+[e $ ! != -> . . . _FrequencyAgilityInfo 0 1 2 `i -> -> -> 0 `i `uc `i 2029  ]
 [; ;miwi_pro.c: 6379: {
 "6379
 {
 [; ;miwi_pro.c: 6380: break;
 "6380
-[e $U 2064  ]
+[e $U 2027  ]
 "6381
 }
-[e :U 2066 ]
+[e :U 2029 ]
 [; ;miwi_pro.c: 6381: }
 [; ;miwi_pro.c: 6382: if( MiApp_MessageAvailable())
 "6382
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 2067  ]
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 2030  ]
 [; ;miwi_pro.c: 6383: {
 "6383
 {
@@ -20367,33 +19967,33 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _MiApp_DiscardMessage ..  ]
 "6385
 }
-[e :U 2067 ]
+[e :U 2030 ]
 "6387
 }
-[e :U 2062 ]
+[e :U 2025 ]
 "6371
-[e $U 2063  ]
-[e :U 2064 ]
+[e $U 2026  ]
+[e :U 2027 ]
 [; ;miwi_pro.c: 6385: }
 [; ;miwi_pro.c: 6387: }
 [; ;miwi_pro.c: 6389: if( FrequencyAgilityInfo.status.bits.DisputeChannel == 0 )
 "6389
-[e $ ! == -> . . . _FrequencyAgilityInfo 0 1 2 `i -> 0 `i 2068  ]
+[e $ ! == -> . . . _FrequencyAgilityInfo 0 1 2 `i -> 0 `i 2031  ]
 [; ;miwi_pro.c: 6390: {
 "6390
 {
 [; ;miwi_pro.c: 6391: break;
 "6391
-[e $U 2055  ]
+[e $U 2018  ]
 "6392
 }
-[e :U 2068 ]
+[e :U 2031 ]
 "6393
 }
-[e :U 2053 ]
+[e :U 2016 ]
 "6338
-[e $U 2054  ]
-[e :U 2055 ]
+[e $U 2017  ]
+[e :U 2018 ]
 [; ;miwi_pro.c: 6392: }
 [; ;miwi_pro.c: 6393: }
 [; ;miwi_pro.c: 6396: StartChannelHopping(FrequencyAgilityInfo.status.bits.SuggestChannel);
@@ -20401,14 +20001,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _StartChannelHopping (1 . . . _FrequencyAgilityInfo 0 1 3 ]
 [; ;miwi_pro.c: 6398: while(FrequencyAgilityInfo.status.bits.ChangeChannel)
 "6398
-[e $U 2069  ]
-[e :U 2070 ]
+[e $U 2032  ]
+[e :U 2033 ]
 [; ;miwi_pro.c: 6399: {
 "6399
 {
 [; ;miwi_pro.c: 6400: if( MiApp_MessageAvailable())
 "6400
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 2072  ]
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 2035  ]
 [; ;miwi_pro.c: 6401: {
 "6401
 {
@@ -20417,22 +20017,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _MiApp_DiscardMessage ..  ]
 "6403
 }
-[e :U 2072 ]
+[e :U 2035 ]
 "6405
 }
-[e :U 2069 ]
+[e :U 2032 ]
 "6398
-[e $ != -> . . . _FrequencyAgilityInfo 0 1 1 `i -> -> -> 0 `i `uc `i 2070  ]
-[e :U 2071 ]
+[e $ != -> . . . _FrequencyAgilityInfo 0 1 1 `i -> -> -> 0 `i `uc `i 2033  ]
+[e :U 2034 ]
 [; ;miwi_pro.c: 6403: }
 [; ;miwi_pro.c: 6405: }
 [; ;miwi_pro.c: 6406: return 1;
 "6406
 [e ) -> -> 1 `i `uc ]
-[e $UE 2039  ]
+[e $UE 2002  ]
 [; ;miwi_pro.c: 6407: }
 "6407
-[e :UE 2039 ]
+[e :UE 2002 ]
 }
 "6449
 [v _MiApp_RemoveConnection `(v ~T0 @X0 1 ef1`uc ]
@@ -20450,7 +20050,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;miwi_pro.c: 6451: uint8_t i;
 [; ;miwi_pro.c: 6453: if( ConnectionIndex == 0xFF )
 "6453
-[e $ ! == -> _ConnectionIndex `i -> 255 `i 2074  ]
+[e $ ! == -> _ConnectionIndex `i -> 255 `i 2037  ]
 [; ;miwi_pro.c: 6454: {
 "6454
 {
@@ -20458,21 +20058,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 "6455
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 2075  ]
-[e $U 2076  ]
+[e $ < -> _i `i -> 10 `i 2038  ]
+[e $U 2039  ]
 "6456
-[e :U 2075 ]
+[e :U 2038 ]
 [; ;miwi_pro.c: 6456: {
 {
 [; ;miwi_pro.c: 6457: if( ConnectionTable[i].status.bits.isValid )
 "6457
-[e $ ! != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i 2078  ]
+[e $ ! != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i 2041  ]
 [; ;miwi_pro.c: 6458: {
 "6458
 {
 [; ;miwi_pro.c: 6459: if( ConnectionTable[i].status.bits.isFamily )
 "6459
-[e $ ! != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 5 `i -> -> -> 0 `i `uc `i 2079  ]
+[e $ ! != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 5 `i -> -> -> 0 `i `uc `i 2042  ]
 [; ;miwi_pro.c: 6460: {
 "6460
 {
@@ -20513,10 +20113,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _DELAY_ms (1 -> -> 100 `i `ui ]
 "6477
 }
-[e :U 2079 ]
+[e :U 2042 ]
 "6478
 }
-[e :U 2078 ]
+[e :U 2041 ]
 [; ;miwi_pro.c: 6477: }
 [; ;miwi_pro.c: 6478: }
 [; ;miwi_pro.c: 6479: ConnectionTable[i].status.Val = 0;
@@ -20526,8 +20126,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "6455
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 2075  ]
-[e :U 2076 ]
+[e $ < -> _i `i -> 10 `i 2038  ]
+[e :U 2039 ]
 "6480
 }
 [; ;miwi_pro.c: 6480: }
@@ -20561,17 +20161,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 "6493
 }
 [; ;miwi_pro.c: 6493: }
-[e $U 2080  ]
+[e $U 2043  ]
 "6494
-[e :U 2074 ]
+[e :U 2037 ]
 [; ;miwi_pro.c: 6494: else if( ConnectionTable[ConnectionIndex].status.bits.isValid )
-[e $ ! != -> . . . *U + &U _ConnectionTable * -> _ConnectionIndex `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i 2081  ]
+[e $ ! != -> . . . *U + &U _ConnectionTable * -> _ConnectionIndex `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i 2044  ]
 [; ;miwi_pro.c: 6495: {
 "6495
 {
 [; ;miwi_pro.c: 6496: if( ConnectionTable[ConnectionIndex].status.bits.isFamily && (ConnectionIndex == myParent) )
 "6496
-[e $ ! && != -> . . . *U + &U _ConnectionTable * -> _ConnectionIndex `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 5 `i -> -> -> 0 `i `uc `i == -> _ConnectionIndex `i -> _myParent `i 2082  ]
+[e $ ! && != -> . . . *U + &U _ConnectionTable * -> _ConnectionIndex `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 5 `i -> -> -> 0 `i `uc `i == -> _ConnectionIndex `i -> _myParent `i 2045  ]
 [; ;miwi_pro.c: 6497: {
 "6497
 {
@@ -20617,16 +20217,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 "6518
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 2083  ]
-[e $U 2084  ]
+[e $ < -> _i `i -> 10 `i 2046  ]
+[e $U 2047  ]
 "6519
-[e :U 2083 ]
+[e :U 2046 ]
 [; ;miwi_pro.c: 6519: {
 {
 [; ;miwi_pro.c: 6521: if( ConnectionTable[i].status.bits.isValid &&
 [; ;miwi_pro.c: 6522: ConnectionTable[i].status.bits.isFamily && (myParent != i) )
 "6522
-[e $ ! && && != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 5 `i -> -> -> 0 `i `uc `i != -> _myParent `i -> _i `i 2086  ]
+[e $ ! && && != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 7 `i -> -> -> 0 `i `uc `i != -> . . . *U + &U _ConnectionTable * -> _i `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 5 `i -> -> -> 0 `i `uc `i != -> _myParent `i -> _i `i 2049  ]
 [; ;miwi_pro.c: 6523: {
 "6523
 {
@@ -20644,7 +20244,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _DELAY_ms (1 -> -> 100 `i `ui ]
 "6532
 }
-[e :U 2086 ]
+[e :U 2049 ]
 [; ;miwi_pro.c: 6532: }
 [; ;miwi_pro.c: 6534: ConnectionTable[i].status.Val = 0;
 "6534
@@ -20653,8 +20253,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "6518
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 2083  ]
-[e :U 2084 ]
+[e $ < -> _i `i -> 10 `i 2046  ]
+[e :U 2047 ]
 "6535
 }
 [; ;miwi_pro.c: 6535: }
@@ -20688,11 +20288,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 "6549
 }
 [; ;miwi_pro.c: 6549: }
-[e $U 2087  ]
+[e $U 2050  ]
 "6551
-[e :U 2082 ]
+[e :U 2045 ]
 [; ;miwi_pro.c: 6551: else if( ConnectionTable[ConnectionIndex].status.bits.isFamily && (ConnectionIndex != myParent) )
-[e $ ! && != -> . . . *U + &U _ConnectionTable * -> _ConnectionIndex `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 5 `i -> -> -> 0 `i `uc `i != -> _ConnectionIndex `i -> _myParent `i 2088  ]
+[e $ ! && != -> . . . *U + &U _ConnectionTable * -> _ConnectionIndex `ux -> -> # *U &U _ConnectionTable `ui `ux 3 1 5 `i -> -> -> 0 `i `uc `i != -> _ConnectionIndex `i -> _myParent `i 2051  ]
 [; ;miwi_pro.c: 6552: {
 "6552
 {
@@ -20736,15 +20336,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _NVMWrite (3 , , -> &U *U + &U _ConnectionTable * -> _ConnectionIndex `ux -> -> # *U &U _ConnectionTable `ui `ux `*uc + _nvmConnectionTable * -> _ConnectionIndex `ui -> # `S1164 `ui -> # `S1164 `ui ]
 "6572
 }
-[e :U 2088 ]
+[e :U 2051 ]
 "6574
-[e :U 2087 ]
+[e :U 2050 ]
 }
-[e :U 2081 ]
+[e :U 2044 ]
 "6575
-[e :U 2080 ]
+[e :U 2043 ]
 [; ;miwi_pro.c: 6572: }
 [; ;miwi_pro.c: 6574: }
 [; ;miwi_pro.c: 6575: }
-[e :UE 2073 ]
+[e :UE 2036 ]
 }

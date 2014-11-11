@@ -133,7 +133,7 @@ void main(void)
         
         LCD_Erase();
         sprintf((char *)LCDText, (char*)"    Microchip   "  );
-        sprintf((char *)&(LCDText[16]), (char*)" MiWi Demo Board");
+        sprintf((char *)&(LCDText[16]), (char*)" MiWi Pro");
         LCD_Update();
 
         /*******************************************************************/

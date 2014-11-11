@@ -17,7 +17,6 @@ system.h  \
 delay.h  \
 eeprom.h  \
 serial_flash.h  \
-miwi_config_mesh.h  \
 system_config.h  \
 symbol.h  \
 drv_mrf_miwi_24j40.h 
