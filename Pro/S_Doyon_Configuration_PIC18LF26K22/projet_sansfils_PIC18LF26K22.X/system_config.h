@@ -65,20 +65,20 @@
 #define RF_EEnCS_TRIS	    TRISDbits.TRISD5
 
 // SPI1 Pin Definitions
-#define SPI_SDI             PORTBbits.RB5
-#define SDI_TRIS            TRISBbits.TRISB5
-#define SPI_SDO             LATCbits.LATC7
-#define SDO_TRIS            TRISCbits.TRISC7
-#define SPI_SCK             LATBbits.LATB4
-#define SCK_TRIS            TRISBbits.TRISB4
+#define SPI_SDI             PORTCbits.RC4     // MISO 1
+#define SDI_TRIS            TRISCbits.TRISC4  // MISO 1
+#define SPI_SDO             LATCbits.LATC5    // MOSI 1
+#define SDO_TRIS            TRISCbits.TRISC5  // MOSI 1
+#define SPI_SCK             LATCbits.LATC3    // SCK  1
+#define SCK_TRIS            TRISCbits.TRISC3  // SCK  1
 
 // SPI2 Pin Definitions
-#define SPI_SDI2            PORTDbits.RD6
-#define SDI2_TRIS           TRISDbits.TRISD6
-#define SPI_SDO2            LATDbits.LATD2
-#define SDO2_TRIS           TRISDbits.TRISD2
-#define SPI_SCK2            LATDbits.LATD4
-#define SCK2_TRIS           TRISDbits.TRISD4
+#define SPI_SDI2            PORTBbits.RB2     // MISO 2 23
+#define SDI2_TRIS           TRISBbits.TRISB2  // MISO 2 23
+#define SPI_SDO2            LATBbits.LATB3    // MOSI 2 24
+#define SDO2_TRIS           TRISBbits.TRISB3  // MOSI 2 24
+#define SPI_SCK2            LATBbits.LATB1    // SCK  2 22
+#define SCK2_TRIS           TRISBbits.TRISB1  // SCK  2 22
 
 #define SPI2SSPIF           PIR3bits.SSP2IF
 #define SPI2WCOL            SSP2CON1bits.WCOL
@@ -89,31 +89,35 @@
 #define SW1_TRIS            TRISBbits.TRISB1
 #define SW2_PORT            PORTBbits.RB2
 #define SW2_TRIS            TRISBbits.TRISB2
-
-#define LED0                LATCbits.LATC2
-#define LED0_TRIS           TRISCbits.TRISC2
-#define LED1                LATAbits.LATA6
-#define LED1_TRIS           TRISAbits.TRISA6
-#define LED2                LATAbits.LATA7
-#define LED2_TRIS           TRISAbits.TRISA7
+// (LED2 R = PIN 11 RC0) (LED0 Green = PIN 12 RC1)( LED1 Yellow = PIN 13 RC2)
+#define LED0                LATCbits.LATC1
+#define LED0_TRIS           TRISCbits.TRISC1
+#define LED1                LATCbits.LATC2
+#define LED1_TRIS           TRISCbits.TRISC2
+#define LED2                LATCbits.LATC0
+#define LED2_TRIS           TRISCbits.TRISC0
 
 // External EEPROM Pin Definitions
+
+// PIN 4 RA2
 //#define EE_nCS_TRIS         TRISDbits.TRISD5
-#define MAC_nCS             LATDbits.LATD5
+#define MAC_nCS             LATAbits.LATA2
 #define TMRL                TMR0L
 
 //External SST Serial Flash Definitions
-#define EE_nCS              LATEbits.LATE2
-#define EE_nCS_TRIS         TRISEbits.TRISE2
+
+// PIN 3 RA1
+#define EE_nCS              LATAbits.LATA1
+#define EE_nCS_TRIS         TRISAbits.TRISA1
 
 // LCD Pin Definitions
-#define LCD_CS_TRIS         TRISDbits.TRISD7
-#define LCD_CS              LATDbits.LATD7
-#define LCD_RS_TRIS         TRISDbits.TRISD3
-#define LCD_RS              LATDbits.LATD3
-#define LCD_RESET_TRIS      TRISEbits.TRISE0
-#define LCD_RESET           LATEbits.LATE0
-#define LCD_BKLT_TRIS       TRISEbits.TRISE1
-#define LCD_BKLT            LATEbits.LATE1
+#define LCD_CS_TRIS         TRISAbits.TRISA3  // CS PIN 5 RA3
+#define LCD_CS              LATAbits.LATA3
+#define LCD_RS_TRIS         TRISAbits.TRISA5   // RS PIN 7 RA5
+#define LCD_RS              LATAbits.LATA5
+#define LCD_RESET_TRIS      TRISAbits.TRISA4    // RST PIN 6 RA4
+#define LCD_RESET           LATAbits.LATA4
+#define LCD_BKLT_TRIS        1 // TRISEbits.TRISE1    // GROUND
+#define LCD_BKLT             1//  LATEbits.LATE1
 	
 #endif

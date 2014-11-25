@@ -10257,7 +10257,7 @@ void SYSTEM_Initialize(void);
 # 59 "serial_flash.c"
 void SSTRead(uint8_t *dest, uint8_t *addr, uint8_t count)
 {
-LATEbits.LATE2 = 0;
+LATAbits.LATA1 = 0;
 SPIPut2(0x03);
 SPIPut2(*addr);
 SPIPut2(*addr++);
@@ -10267,13 +10267,13 @@ while( count )
 *dest++ = SPIGet2();
 count--;
 }
-LATEbits.LATE2 = 1;
+LATAbits.LATA1 = 1;
 }
 
 # 93
 void SSTWrite(uint8_t *src, uint8_t *addr, uint8_t count)
 {
-LATEbits.LATE2 = 0;
+LATAbits.LATA1 = 0;
 SPIPut2(0x06);
 SPIPut2(0xAF);
 SPIPut2(*addr);
@@ -10286,17 +10286,17 @@ count--;
 if(count != 0) SPIPut2(0xAF);
 }
 SPIPut2(0x04);
-LATEbits.LATE2 = 1;
+LATAbits.LATA1 = 1;
 }
 
 # 128
 void SSTGetID(uint8_t *dest)
 {
-LATEbits.LATE2 = 0;
+LATAbits.LATA1 = 0;
 SPIPut2(0x90);
 SPIPut2(0x00);
 SPIPut2(0x00);
 SPIPut2(0x00);
 *dest = SPIGet2();
-LATEbits.LATE2 = 1;
+LATAbits.LATA1 = 1;
 }

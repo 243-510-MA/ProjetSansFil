@@ -65,38 +65,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S483 . . . . . . . . . . ]
 "7836
 [v _LATCbits `VS483 ~T0 @X0 0 e@3979 ]
-"7530
-[s S464 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S464 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
-"7540
-[s S465 :1 `uc 1 ]
-[n S465 . LA0 ]
-"7543
-[s S466 :1 `uc 1 :1 `uc 1 ]
-[n S466 . . LA1 ]
-"7547
-[s S467 :2 `uc 1 :1 `uc 1 ]
-[n S467 . . LA2 ]
-"7551
-[s S468 :3 `uc 1 :1 `uc 1 ]
-[n S468 . . LA3 ]
-"7555
-[s S469 :4 `uc 1 :1 `uc 1 ]
-[n S469 . . LA4 ]
-"7559
-[s S470 :5 `uc 1 :1 `uc 1 ]
-[n S470 . . LA5 ]
-"7563
-[s S471 :6 `uc 1 :1 `uc 1 ]
-[n S471 . . LA6 ]
-"7567
-[s S472 :7 `uc 1 :1 `uc 1 ]
-[n S472 . . LA7 ]
-"7529
-[u S463 `S464 1 `S465 1 `S466 1 `S467 1 `S468 1 `S469 1 `S470 1 `S471 1 `S472 1 ]
-[n S463 . . . . . . . . . . ]
-"7572
-[v _LATAbits `VS463 ~T0 @X0 0 e@3977 ]
 "46 lcd.h
 [v _LCD_Update `(v ~T0 @X0 0 ef ]
 "710 miwi_api.h
@@ -8580,15 +8548,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;range_demo.c: 158: sprintf((char *)&LCDText, (char*)"Strength: High ");
 "158
 [e ( _sprintf (1 , &U _LCDText -> -> :s 3C `*uc `*Cuc ]
-[; ;range_demo.c: 159: LATCbits.LATC2 = 1;
+[; ;range_demo.c: 159: LATCbits.LATC1 = 1;
 "159
-[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-[; ;range_demo.c: 160: LATAbits.LATA6 = 0;
+[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
+[; ;range_demo.c: 160: LATCbits.LATC2 = 0;
 "160
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-[; ;range_demo.c: 161: LATAbits.LATA7 = 0;
+[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
+[; ;range_demo.c: 161: LATCbits.LATC0 = 0;
 "161
-[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 "162
 }
 [; ;range_demo.c: 162: }
@@ -8603,15 +8571,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;range_demo.c: 169: sprintf((char *)&LCDText, (char*)"Strength: Medium");
 "169
 [e ( _sprintf (1 , &U _LCDText -> -> :s 4C `*uc `*Cuc ]
-[; ;range_demo.c: 170: LATCbits.LATC2 = 1;
+[; ;range_demo.c: 170: LATCbits.LATC1 = 1;
 "170
-[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-[; ;range_demo.c: 171: LATAbits.LATA6 = 1;
+[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
+[; ;range_demo.c: 171: LATCbits.LATC2 = 1;
 "171
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-[; ;range_demo.c: 172: LATAbits.LATA7 = 0;
+[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
+[; ;range_demo.c: 172: LATCbits.LATC0 = 0;
 "172
-[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 "173
 }
 [; ;range_demo.c: 173: }
@@ -8626,15 +8594,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;range_demo.c: 180: sprintf((char *)&LCDText, (char*)"Strength: Low");
 "180
 [e ( _sprintf (1 , &U _LCDText -> -> :s 5C `*uc `*Cuc ]
-[; ;range_demo.c: 181: LATCbits.LATC2 = 0;
+[; ;range_demo.c: 181: LATCbits.LATC1 = 0;
 "181
-[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-[; ;range_demo.c: 182: LATAbits.LATA6 = 1;
+[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
+[; ;range_demo.c: 182: LATCbits.LATC2 = 1;
 "182
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-[; ;range_demo.c: 183: LATAbits.LATA7 = 0;
+[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
+[; ;range_demo.c: 183: LATCbits.LATC0 = 0;
 "183
-[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 "184
 }
 [e :U 1200 ]
@@ -8657,15 +8625,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;range_demo.c: 192: LCD_Display((char *)"No Device Found or Out of Range ", 0, 1);
 "192
 [e ( _LCD_Display (3 , , -> :s 7C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;range_demo.c: 193: LATCbits.LATC2 = 0;
+[; ;range_demo.c: 193: LATCbits.LATC1 = 0;
 "193
-[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-[; ;range_demo.c: 194: LATAbits.LATA6 = 0;
+[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
+[; ;range_demo.c: 194: LATCbits.LATC2 = 0;
 "194
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-[; ;range_demo.c: 195: LATAbits.LATA7 = 1;
+[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
+[; ;range_demo.c: 195: LATCbits.LATC0 = 1;
 "195
-[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
+[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
 "196
 }
 [e :U 1201 ]

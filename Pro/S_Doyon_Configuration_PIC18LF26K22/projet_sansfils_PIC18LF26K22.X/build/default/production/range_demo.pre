@@ -10747,9 +10747,9 @@ if(rssi > 120)
 # 157
 {
 sprintf((char *)&LCDText, (char*)"Strength: High ");
-LATCbits.LATC2 = 1;
-LATAbits.LATA6 = 0;
-LATAbits.LATA7 = 0;
+LATCbits.LATC1 = 1;
+LATCbits.LATC2 = 0;
+LATCbits.LATC0 = 0;
 }
 
 else if(rssi < 121 && rssi > 60)
@@ -10757,9 +10757,9 @@ else if(rssi < 121 && rssi > 60)
 # 168
 {
 sprintf((char *)&LCDText, (char*)"Strength: Medium");
+LATCbits.LATC1 = 1;
 LATCbits.LATC2 = 1;
-LATAbits.LATA6 = 1;
-LATAbits.LATA7 = 0;
+LATCbits.LATC0 = 0;
 }
 
 else if(rssi < 61)
@@ -10767,9 +10767,9 @@ else if(rssi < 61)
 # 179
 {
 sprintf((char *)&LCDText, (char*)"Strength: Low");
-LATCbits.LATC2 = 0;
-LATAbits.LATA6 = 1;
-LATAbits.LATA7 = 0;
+LATCbits.LATC1 = 0;
+LATCbits.LATC2 = 1;
+LATCbits.LATC0 = 0;
 }
 
 
@@ -10779,9 +10779,9 @@ sprintf((char *)&(LCDText[16]), (char*)"Rcv RSSI: %03d", rssi);
 else
 {
 LCD_Display((char *)"No Device Found or Out of Range ", 0, 1);
+LATCbits.LATC1 = 0;
 LATCbits.LATC2 = 0;
-LATAbits.LATA6 = 0;
-LATAbits.LATA7 = 1;
+LATCbits.LATC0 = 1;
 }
 
 LCD_Update();

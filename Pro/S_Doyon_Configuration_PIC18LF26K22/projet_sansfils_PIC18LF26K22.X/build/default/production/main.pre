@@ -10710,7 +10710,7 @@ NetFreezerEnable = 0;
 SYSTEM_Initialize();
 
 
-LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 1;
+LATCbits.LATC1 = LATCbits.LATC2 = LATCbits.LATC0 = 1;
 
 Read_MAC_Address();
 
@@ -11057,7 +11057,7 @@ uint8_t switch_val, menu_choice = 0;
 result = 0;
 
 
-LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
+LATCbits.LATC1 = LATCbits.LATC2 = LATCbits.LATC0 = 0;
 
 
 

@@ -44,38 +44,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S483 . . . . . . . . . . ]
 "7836
 [v _LATCbits `VS483 ~T0 @X0 0 e@3979 ]
-"7530
-[s S464 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S464 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
-"7540
-[s S465 :1 `uc 1 ]
-[n S465 . LA0 ]
-"7543
-[s S466 :1 `uc 1 :1 `uc 1 ]
-[n S466 . . LA1 ]
-"7547
-[s S467 :2 `uc 1 :1 `uc 1 ]
-[n S467 . . LA2 ]
-"7551
-[s S468 :3 `uc 1 :1 `uc 1 ]
-[n S468 . . LA3 ]
-"7555
-[s S469 :4 `uc 1 :1 `uc 1 ]
-[n S469 . . LA4 ]
-"7559
-[s S470 :5 `uc 1 :1 `uc 1 ]
-[n S470 . . LA5 ]
-"7563
-[s S471 :6 `uc 1 :1 `uc 1 ]
-[n S471 . . LA6 ]
-"7567
-[s S472 :7 `uc 1 :1 `uc 1 ]
-[n S472 . . LA7 ]
-"7529
-[u S463 `S464 1 `S465 1 `S466 1 `S467 1 `S468 1 `S469 1 `S470 1 `S471 1 `S472 1 ]
-[n S463 . . . . . . . . . . ]
-"7572
-[v _LATAbits `VS463 ~T0 @X0 0 e@3977 ]
 "27 eeprom.h
 [v _EEPROMRead `(v ~T0 @X0 0 ef3`*uc`uc`uc ]
 "29 serial_flash.h
@@ -8445,9 +8413,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;self_test.c: 52: LCD_Display((char *)"Testing ...", 0, 1);
 "52
 [e ( _LCD_Display (3 , , -> :s 3C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;self_test.c: 53: LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
+[; ;self_test.c: 53: LATCbits.LATC1 = LATCbits.LATC2 = LATCbits.LATC0 = 0;
 "53
-[e = . . _LATCbits 0 2 = . . _LATAbits 0 6 = . . _LATAbits 0 7 -> -> 0 `i `uc ]
+[e = . . _LATCbits 0 1 = . . _LATCbits 0 2 = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 [; ;self_test.c: 54: switch(init_case)
 "54
 [e $U 1195  ]
@@ -8626,9 +8594,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "109
 [e :U 1220 ]
 [e ( _LCD_Display (3 , , -> :s 4C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;self_test.c: 110: LATCbits.LATC2 = LATAbits.LATA6= LATAbits.LATA7 = 1;
+[; ;self_test.c: 110: LATCbits.LATC1 = LATCbits.LATC2= LATCbits.LATC0 = 1;
 "110
-[e = . . _LATCbits 0 2 = . . _LATAbits 0 6 = . . _LATAbits 0 7 -> -> 1 `i `uc ]
+[e = . . _LATCbits 0 1 = . . _LATCbits 0 2 = . . _LATCbits 0 0 -> -> 1 `i `uc ]
 [; ;self_test.c: 111: init_case = 0xF0;
 "111
 [e = _init_case -> -> 240 `i `uc ]
@@ -8639,9 +8607,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "113
 [e :U 1221 ]
 [e ( _LCD_Display (3 , , -> :s 5C `*uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;self_test.c: 114: LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 1;
+[; ;self_test.c: 114: LATCbits.LATC1 = LATCbits.LATC2 = LATCbits.LATC0 = 1;
 "114
-[e = . . _LATCbits 0 2 = . . _LATAbits 0 6 = . . _LATAbits 0 7 -> -> 1 `i `uc ]
+[e = . . _LATCbits 0 1 = . . _LATCbits 0 2 = . . _LATCbits 0 0 -> -> 1 `i `uc ]
 [; ;self_test.c: 115: init_case = 0xF0;
 "115
 [e = _init_case -> -> 240 `i `uc ]

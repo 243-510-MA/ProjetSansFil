@@ -1,5 +1,5 @@
 
-# 1 "lcd.c"
+# 1 "symbol.c"
 
 # 21 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -10254,163 +10254,70 @@ uint16_t Val;
 # 119
 void SYSTEM_Initialize(void);
 
-# 22 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\string.h"
-extern void * memcpy(void *, const void *, size_t);
-extern void * memmove(void *, const void *, size_t);
-extern void * memset(void *, int, size_t);
+# 32 "symbol.c"
+volatile uint8_t timerExtension1,timerExtension2;
 
-# 42
-extern char * strcat(char *, const char *);
-extern char * strcpy(char *, const char *);
-extern char * strncat(char *, const char *, size_t);
-extern char * strncpy(char *, const char *, size_t);
-extern char * strdup(const char *);
-extern char * strtok(char *, const char *);
-
-
-extern int memcmp(const void *, const void *, size_t);
-extern int strcmp(const char *, const char *);
-extern int stricmp(const char *, const char *);
-extern int strncmp(const char *, const char *, size_t);
-extern int strnicmp(const char *, const char *, size_t);
-extern void * memchr(const void *, int, size_t);
-extern size_t strcspn(const char *, const char *);
-extern char * strpbrk(const char *, const char *);
-extern size_t strspn(const char *, const char *);
-extern char * strstr(const char *, const char *);
-extern char * stristr(const char *, const char *);
-extern char * strerror(int);
-extern size_t strlen(const char *);
-extern char * strchr(const char *, int);
-extern char * strichr(const char *, int);
-extern char * strrchr(const char *, int);
-extern char * strrichr(const char *, int);
-
-# 28 "lcd.c"
-uint8_t LCDText[16*2+1];
-
-
-void LCD_WriteCmd(uint8_t data)
+# 59
+void InitSymbolTimer()
 {
-LATAbits.LATA3 = 0;
-LATAbits.LATA5 = 0;
 
-SPIPut2(data);
+T1CON = 0b00111000;
+PIR1bits.TMR1IF = 0;
+PIE1bits.TMR1IE = 1;
+T1CONbits.TMR1ON = 1;
 
-LATAbits.LATA3 = 1;
+# 74
+timerExtension1 = 0;
+timerExtension2 = 0;
+
 }
 
-
-void LCD_WriteData(uint8_t data)
+# 104
+MIWI_TICK MiWi_TickGet(void)
 {
-LATAbits.LATA3 = 0;
-LATAbits.LATA5 = 1;
+MIWI_TICK currentTime;
 
-SPIPut2(data);
 
-LATAbits.LATA3 = 1;
+uint8_t failureCounter;
+
+
+PIE1bits.TMR1IE = 0;
+
+
+currentTime.byte.b2 = 0;
+currentTime.byte.b3 = 0;
+
+failureCounter = 0;
+
+do
+{
+currentTime.byte.b0 = TMR1L;
+currentTime.byte.b1 = TMR1H;
+} while( currentTime.word.w0 == 0xFFFF && failureCounter++ < 3 );
+
+
+
+if(PIR1bits.TMR1IF)
+{
+
+{
+
+
+currentTime.byte.b2++;
+if(timerExtension1 == 0xFF)
+{
+currentTime.byte.b3++;
 }
 
-
-void LCD_Initialize(void)
-{
-LATAbits.LATA3 = 1;
-LATAbits.LATA4 = 0;
-DELAY_ms(8);
-LATAbits.LATA4 = 1;
-DELAY_ms(80);
-LCD_WriteCmd(0x30);
-DELAY_ms(8);
-LCD_WriteCmd(0x30);
-LCD_WriteCmd(0x30);
-LCD_WriteCmd(0x39);
-LCD_WriteCmd(0x14);
-LCD_WriteCmd(0x56);
-LCD_WriteCmd(0x6D);
-
-LCD_WriteCmd(0x70);
-LCD_WriteCmd(0x0E);
-LCD_WriteCmd(0x06);
-LCD_WriteCmd(0x01);
-DELAY_ms(40);
-}
-
-# 92
-void LCD_Erase(void)
-{
-
-LCD_WriteCmd(0x01);;
-DELAY_ms(2);
-
-
-memset(LCDText, ' ', 32);
-}
-
-void LCD_BacklightON(void)
-{
-1 = 1;
-}
-
-void LCD_BacklightOFF(void)
-{
-1 = 0;
-}
-
-
-void LCD_Update(void)
-{
-uint8_t i;
-
-LCD_WriteCmd(0x80 | 0x00);
-
-for(i = 0; i < 16; i++)
-{
-if( LCDText[i] == 0 )
-{
-LCD_WriteData(' ');
-}
-else
-{
-LCD_WriteData(LCDText[i]);
-}
-}
-
-LCD_WriteCmd(0x80 | 0x40);
-
-for(i = 16; i < 32; i++)
-{
-if( LCDText[i] == 0 )
-{
-LCD_WriteData(' ');
-}
-else
-{
-LCD_WriteData(LCDText[i]);
-}
-}
-}
-
-# 168
-void LCD_Display(char *text, uint8_t value, bool delay)
-{
-LCD_Erase();
-sprintf((char *)LCDText, (char*)text, value);
-LCD_Update();
-
-
-if( delay )
-{
-uint8_t i;
-for(i = 0; i < 8; i++)
-{
-DELAY_ms(250);
-}
 }
 }
 
 
-void UserInterruptHandler(void)
-{
+currentTime.byte.b2 += timerExtension1;
+currentTime.byte.b3 += timerExtension2;
 
-# 193
+
+PIE1bits.TMR1IE = 1;
+
+return currentTime;
 }

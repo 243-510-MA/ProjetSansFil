@@ -10260,7 +10260,7 @@ extern uint8_t myLongAddress[];
 # 57
 void EEPROMRead(uint8_t *dest, uint8_t addr, uint8_t count)
 {
-LATDbits.LATD5 = 0;
+LATAbits.LATA2 = 0;
 SPIPut2(0x03);
 SPIPut2(addr);
 while( count )
@@ -10268,7 +10268,7 @@ while( count )
 *dest++ = SPIGet2();
 count--;
 }
-LATDbits.LATD5 = 1;
+LATAbits.LATA2 = 1;
 }
 
 # 88

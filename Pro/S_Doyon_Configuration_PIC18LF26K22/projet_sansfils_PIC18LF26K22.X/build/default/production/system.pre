@@ -1,5 +1,5 @@
 
-# 1 "lcd.c"
+# 1 "system.c"
 
 # 21 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -10254,163 +10254,122 @@ uint16_t Val;
 # 119
 void SYSTEM_Initialize(void);
 
-# 22 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\string.h"
-extern void * memcpy(void *, const void *, size_t);
-extern void * memmove(void *, const void *, size_t);
-extern void * memset(void *, int, size_t);
 
-# 42
-extern char * strcat(char *, const char *);
-extern char * strcpy(char *, const char *);
-extern char * strncat(char *, const char *, size_t);
-extern char * strncpy(char *, const char *, size_t);
-extern char * strdup(const char *);
-extern char * strtok(char *, const char *);
+# 26 "system.c"
+#pragma config OSC = HSHP , WDTEN = OFF, XINST = OFF, WDTPS = 2048, PLLDIV = 2, CPUDIV = OSC3_PLL3
 
-
-extern int memcmp(const void *, const void *, size_t);
-extern int strcmp(const char *, const char *);
-extern int stricmp(const char *, const char *);
-extern int strncmp(const char *, const char *, size_t);
-extern int strnicmp(const char *, const char *, size_t);
-extern void * memchr(const void *, int, size_t);
-extern size_t strcspn(const char *, const char *);
-extern char * strpbrk(const char *, const char *);
-extern size_t strspn(const char *, const char *);
-extern char * strstr(const char *, const char *);
-extern char * stristr(const char *, const char *);
-extern char * strerror(int);
-extern size_t strlen(const char *);
-extern char * strchr(const char *, int);
-extern char * strichr(const char *, int);
-extern char * strrchr(const char *, int);
-extern char * strrichr(const char *, int);
-
-# 28 "lcd.c"
-uint8_t LCDText[16*2+1];
-
-
-void LCD_WriteCmd(uint8_t data)
+# 47
+void SYSTEM_Initialize(void)
 {
-LATAbits.LATA3 = 0;
-LATAbits.LATA5 = 0;
-
-SPIPut2(data);
-
-LATAbits.LATA3 = 1;
-}
 
 
-void LCD_WriteData(uint8_t data)
-{
-LATAbits.LATA3 = 0;
+
+OSCCON = 0x78;
+OSCTUNEbits.PLLEN = 1;
+WDTCONbits.SWDTEN = 0;
+
+# 60
+EECON2 = 0x55;
+EECON2 = 0xAA;
+PPSCONbits.IOLOCK = 0;
+
+RPINR1 = 17;
+RPINR21 = 23;
+RPOR21 = 10;
+RPOR19 = 9;
+
+
+EECON2 = 0x55;
+EECON2 = 0xAA;
+PPSCONbits.IOLOCK = 1;
+
+
+
+
+ANCON0 = 0xFC;
+ANCON1 = 0x1F;
+
+
+
+
+LATCbits.LATC1 = 0;
+LATCbits.LATC2 = 0;
+LATCbits.LATC0 = 0;
+TRISCbits.TRISC1 = 0;
+TRISCbits.TRISC2 = 0;
+TRISCbits.TRISC0 = 0;
+
+TRISBbits.TRISB1 = 1;
+TRISBbits.TRISB2 = 1;
+
+INTCON2bits.RBPU = 0;
+
+
+
+
+TRISAbits.TRISA1 = 1;
+TRISAbits.TRISA0 = 1;
+
+# 107
 LATAbits.LATA5 = 1;
+LATDbits.LATD0 = 1;
+LATDbits.LATD1 = 1;
 
-SPIPut2(data);
-
-LATAbits.LATA3 = 1;
-}
-
-
-void LCD_Initialize(void)
-{
-LATAbits.LATA3 = 1;
-LATAbits.LATA4 = 0;
-DELAY_ms(8);
-LATAbits.LATA4 = 1;
-DELAY_ms(80);
-LCD_WriteCmd(0x30);
-DELAY_ms(8);
-LCD_WriteCmd(0x30);
-LCD_WriteCmd(0x30);
-LCD_WriteCmd(0x39);
-LCD_WriteCmd(0x14);
-LCD_WriteCmd(0x56);
-LCD_WriteCmd(0x6D);
-
-LCD_WriteCmd(0x70);
-LCD_WriteCmd(0x0E);
-LCD_WriteCmd(0x06);
-LCD_WriteCmd(0x01);
-DELAY_ms(40);
-}
-
-# 92
-void LCD_Erase(void)
-{
-
-LCD_WriteCmd(0x01);;
-DELAY_ms(2);
+TRISAbits.TRISA5 = 0;
+TRISDbits.TRISD0 = 0;
+TRISDbits.TRISD1 = 0;
+TRISBbits.TRISB0 = 1;
 
 
-memset(LCDText, ' ', 32);
-}
+INTCON2bits.INTEDG0 = 0;
 
-void LCD_BacklightON(void)
-{
-1 = 1;
-}
+INTCONbits.INT0IF = 0;
+INTCONbits.INT0IE = 1;
 
-void LCD_BacklightOFF(void)
-{
+
+
+
+TRISCbits.TRISC4 = 1;
+TRISCbits.TRISC5 = 0;
+TRISCbits.TRISC3 = 0;
+
+SSP1STAT = 0xC0;
+SSP1CON1 = 0x20;
+
+# 137
+LATDbits.LATD5 = 1;
+TRISDbits.TRISD5 = 0;
+LATAbits.LATA1 = 1;
+TRISAbits.TRISA1 = 0;
+
+# 146
 1 = 0;
-}
+LATAbits.LATA3 = 1;
+LATAbits.LATA5 = 0;
+LATAbits.LATA4 = 0;
+1 = 0;
+TRISAbits.TRISA3 = 0;
+TRISAbits.TRISA5 = 0;
+TRISAbits.TRISA4 = 0;
+
+# 159
+TRISBbits.TRISB2 = 1;
+TRISBbits.TRISB3 = 0;
+TRISBbits.TRISB1 = 0;
+
+SSP2STAT = 0x00;
+SSP2CON1 = 0x31;
+
+PIR3bits.SSP2IF = 0;
+
+LCD_Initialize();
 
 
-void LCD_Update(void)
-{
-uint8_t i;
-
-LCD_WriteCmd(0x80 | 0x00);
-
-for(i = 0; i < 16; i++)
-{
-if( LCDText[i] == 0 )
-{
-LCD_WriteData(' ');
-}
-else
-{
-LCD_WriteData(LCDText[i]);
-}
-}
-
-LCD_WriteCmd(0x80 | 0x40);
-
-for(i = 16; i < 32; i++)
-{
-if( LCDText[i] == 0 )
-{
-LCD_WriteData(' ');
-}
-else
-{
-LCD_WriteData(LCDText[i]);
-}
-}
-}
-
-# 168
-void LCD_Display(char *text, uint8_t value, bool delay)
-{
-LCD_Erase();
-sprintf((char *)LCDText, (char*)text, value);
-LCD_Update();
 
 
-if( delay )
-{
-uint8_t i;
-for(i = 0; i < 8; i++)
-{
-DELAY_ms(250);
-}
-}
-}
+INTCONbits.GIEH = 1;
+INTCONbits.GIEL = 1;
 
 
-void UserInterruptHandler(void)
-{
-
-# 193
 }
+

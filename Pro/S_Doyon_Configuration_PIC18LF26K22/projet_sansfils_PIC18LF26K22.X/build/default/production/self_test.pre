@@ -10696,7 +10696,7 @@ if(switch_val == 1)
 while(1)
 {
 LCD_Display((char *)"Testing ...", 0, 1);
-LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 0;
+LATCbits.LATC1 = LATCbits.LATC2 = LATCbits.LATC0 = 0;
 switch(init_case)
 {
 case 0:
@@ -10753,11 +10753,11 @@ else init_case = 255;
 break;
 
 case 254: LCD_Display((char *)"Self Test Mode  Test Pass", 0, 1);
-LATCbits.LATC2 = LATAbits.LATA6= LATAbits.LATA7 = 1;
+LATCbits.LATC1 = LATCbits.LATC2= LATCbits.LATC0 = 1;
 init_case = 0xF0;
 break;
 case 255: LCD_Display((char *)"Self Test Mode  Test Fail", 0, 1);
-LATCbits.LATC2 = LATAbits.LATA6 = LATAbits.LATA7 = 1;
+LATCbits.LATC1 = LATCbits.LATC2 = LATCbits.LATC0 = 1;
 init_case = 0xF0;
 break;
 default: break;
