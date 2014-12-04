@@ -1,0 +1,47 @@
+/* 
+ * File:   miwi_config_pro.h
+ * Author: frda
+ *
+ * Created on November 6, 2014, 12:47 PM
+ */
+
+#ifndef MIWI_CONFIG_PRO_H
+#define	MIWI_CONFIG_PRO_H
+
+#ifdef	__cplusplus
+extern "C" {
+#endif
+
+#define NUM_COORDINATOR 32
+#define FAMILY_TREE_BROADCAST 3
+#define ROUTING_TABLE_BROADCAST 3
+#define COMM_RSSI_THRESHOLD 0x03
+#define RANDOM_DELAY_RANGE 100
+#define PACKET_RECORD_SIZE 5
+#define PACKET_RECORD_TIMEOUT (ONE_SECOND/2)
+#define FA_MAX_NOISE_THRESHOLD 0x30
+#define FA_WAIT_TIMEOUT ((ONE_SECOND) * 2)
+#define FA_BROADCAST_TIME 0x03
+#define FA_COMM_INTERVAL (ONE_SECOND)
+#define ENABLE_ROUTING UPDATE
+#define ROUTING_UPDATE_INTERVAL (ONE_HOUR)
+#define ROUTING_UPDATE_EXPIRATION 3
+
+
+#define ACTIVE_SCAN_RESULT_SIZE     4
+#define INDIRECT_MESSAGE_SIZE   2
+#define INDIRECT_MESSAGE_TIMEOUT_CYCLE  2
+#define COMM_INTERVAL (ONE_SECOND)
+#define OPEN_SOCKET_TIMEOUT             (ONE_SECOND * 3)
+#define INDIRECT_MESSAGE_TIMEOUT (ONE_SECOND * RFD_WAKEUP_INTERVAL * INDIRECT_MESSAGE_TIMEOUT_CYCLE)
+#define MAX_ROUTING_FAILURE 3
+#define CONNECTION_RETRY_TIMES          3
+#define MIWI_PRO_ACK_TIMEOUT (ONE_SECOND)
+#define RESYNC_TIMES                0x03
+
+#ifdef	__cplusplus
+}
+#endif
+
+#endif	/* MIWI_CONFIG_PRO_H */
+
