@@ -1,0 +1,54 @@
+Voici  l'interface graphique qui a été développé sur WebStudio. 
+
+Étant donné qu'il y a très peu de chance que toi, cher lecteur, soit familier
+avec ce programme, je te conseillerais plutôt de travailler avec Visual Studio.
+Tu peux l'avoir gratuitement grâce à Dreamspark. De plus, il y a beaucoup plus
+de documentation disponible en ligne pour celui-ci. Si tu décides tout de même
+d'utiliser WebStudio, je te conseille de t'arranger pour télécharger une version
+étudiante. Les critères d'admission sont sur le site web d'Indusoft Web Studio.
+Un des avantages de ce programme est qu'il te permet de créer facilement l'interface
+graphique, ainsi qu'établir relativement facilement la communication avec d'autres 
+périphériques (PIC18F2580 et Arduino Mega 2560, par exemple). La programmation
+se fait en Visual Basic (ce qui n'est pas trop dur à apprendre, garde juste le fichier
+d'aide ouvert!). Je vais laisser des screenshots des settings utilisé pour établir la 
+communication étant donné que ça l'a demandé un certain travail. Pour plus de détail,
+consulte le pdf TxRx. Il explique plus en profondeur les différents paramètres
+utilisé en communication série. 
+
+Divers:
+-Les tags sont des sortes de variables globales auxquels il est possible d'accéder
+ d'à peu près partout.Ils sont appellé en utilisant un signe de dollar ($) en avant
+ du nom écrit.
+-Certaines fonctions doivent être appellé comme des tags. Si vous voyez la fonction
+ écrite en rouge, essayez de mettre $ devant.
+-Les procédures principales sont des fonctions qui peuvent être appellé à peu près
+ partout dans le programme.
+-Vous pouvez ajouter des  commandes aux objets graphiques en cliquant sur un objet,
+ puis aller dans le menu "Graphique" (tout en haut), puis à gauche, vous verrez la
+ sous-section "Animation". Cliquez sur n'importe lequel des icônes à l'intérieur
+ afin d'ajouter des contrôles sur l'objet. Vous pouvez ainsi transformer n'importe
+ quoi en bouton ou en Display, etc... 
+
+Onglet "Tâche"("Task") dans l'explorateur de projet:
+-"Recette" ou "Recipes" (en anglais je crois) permet de sauvegarder les valeurs des tags
+ même une fois le programme arrêté.
+-"Calendrier" permet de créer des interuptions pour lorsque quelque chose se produit. 
+ Par exemple, si la valeur d'un tag se modifie, un évenèment associé se déclenche.
+
+Onglet "Communication" dans l'explorateur de projet:
+-C'est là qu'on établie la communication série.
+
+Onglet "Graphique" dans l'explorateur de projet:
+-C'est là qu'on vient créer l'interface graphique. En premier lieu, il faut créer des écrans.
+ 
+Onglet "Globale" dans l'explorateur de projet:
+-C'est là qu'on vient créer les tags, les classes, ainsi que les procédures.
+
+
+Si vous voulez voir où ce que j'étais rendu, allez dans les procédures, je travaillais sur
+la fonction "Traitement_Reception" qui servait à convertir les valeurs reçu afin de les
+utiliser dans l'algorythme de localisation. Attention! Il n'est pas possible de convertir les 
+strings en hexadécimal. Si vous tentez de le faire avec la fonction $Num, les caractères de 
+l'alphabet seront tout bonnement ignoré (Exemple: 0xA4 -> 4, 0x7B -> 7, 0x50 -> 50).
+
+Bonne chance!
